@@ -57,11 +57,8 @@
           <p class="lead">Three minutes. We'll show you exactly where revenue is leaking — and what AI can recover.</p>
         </div>
 
-        <form id="intake" action="https://formsubmit.co/info@stratum137.com" method="POST" class="intake-form">
-          <input type="hidden" name="_subject" value="New AI Assessment Lead — stratum137.com">
-          <input type="hidden" name="_template" value="table">
+        <form id="intake" action="https://mc.stratum137.com/api/leads/intake?token=83da63ef9391736c9ded936c2bb53847" method="POST" class="intake-form">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-          <input type="hidden" name="_next" value="https://stratum137.com/assessment.html?sent=1">
 
           <div class="field-grid">
             <label>Business name *
@@ -162,6 +159,29 @@
     document.getElementById("formwrap").hidden = true;
     document.getElementById("thanks").hidden = false;
   }
+
+  // Submit straight to Mission Control's intake API (returns JSON, so we
+  // handle the redirect ourselves) and join the pain checkboxes into one field.
+  document.getElementById("intake").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    var form = e.target;
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    try {
+      var fd = new FormData(form);
+      var pains = fd.getAll("pains").join(", ");
+      fd.delete("pains");
+      if (pains) fd.set("pains", pains);
+      var res = await fetch(form.action, { method: "POST", body: fd });
+      if (!res.ok) throw new Error("send failed");
+      location.href = "assessment.html?sent=1";
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = "Send it — get my assessment started";
+      alert("Something hiccuped sending the form — please try again, or email info@stratum137.com.");
+    }
+  });
 </script>
 
 </body>
