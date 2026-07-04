@@ -33,7 +33,7 @@
   <div id="gate">
     <div class="mark">STRATUM 137</div>
     <div style="color:var(--dim);font-size:.9rem;">Enter password to view</div>
-    <input id="pw" type="password" placeholder="Password" autofocus>
+    <input id="pw" type="password" placeholder="Password" autocomplete="new-password" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
     <button id="go">Enter</button>
     <div class="err" id="err"></div>
   </div>
@@ -74,6 +74,8 @@
         if (input.value.toLowerCase().trim() === PW) { unlock(); }
         else { err.textContent = 'Incorrect password.'; input.value = ''; input.focus(); }
       }
+      input.value = '';
+      setTimeout(function () { input.value = ''; }, 200);
       if (sessionStorage.getItem('mc_ok') === '1') { unlock(); }
       document.getElementById('go').addEventListener('click', tryPw);
       input.addEventListener('keydown', function (e) { if (e.key === 'Enter') tryPw(); });
