@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Your AI Assessment — Stratum 137</title>
+<meta name="description" content="Tell us about your business in 3 minutes. We'll show you exactly where you're leaking revenue and what AI can recover.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<!--
+  FORM ENDPOINT — two modes:
+  1. TODAY (interim): FormSubmit relays each submission to info@stratum137.com.
+     First-ever submission triggers a one-time confirmation email — click it once.
+  2. AT MISSION CONTROL MIGRATION: swap ACTION below to
+     https://<mission-control-domain>/api/leads/intake?token=<LEADS_INTAKE_TOKEN>
+     and leads land directly in the Agent Inbox.
+-->
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-mark.png" alt="Stratum 137" class="brand-mark">
+      <span class="brand-name">STRATUM 137</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="index.html#who">Who It's For</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <a href="mailto:info@stratum137.com" class="btn btn-ghost nav-cta">Email Us</a>
+  </div>
+</header>
+
+<main>
+  <section class="section intake">
+    <div class="container intake-inner">
+
+      <div id="thanks" class="intake-thanks" hidden>
+        <div class="eyebrow">Received</div>
+        <h1>Got it — we're on it.</h1>
+        <p class="lead">We'll review your answers and reply within one business day with next steps for your AI assessment. No spam, no drip campaign — just us.</p>
+        <a href="index.html" class="btn btn-primary">Back to the site</a>
+      </div>
+
+      <div id="formwrap">
+        <div class="section-head">
+          <div class="eyebrow">AI Business Assessment</div>
+          <h1>Tell us about your business.</h1>
+          <p class="lead">Three minutes. We'll show you exactly where revenue is leaking — and what AI can recover.</p>
+        </div>
+
+        <form id="intake" action="https://formsubmit.co/info@stratum137.com" method="POST" class="intake-form">
+          <input type="hidden" name="_subject" value="New AI Assessment Lead — stratum137.com">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="_next" value="https://stratum137.com/assessment.html?sent=1">
+
+          <div class="field-grid">
+            <label>Business name *
+              <input type="text" name="business" required placeholder="Acme Salon">
+            </label>
+            <label>Your name *
+              <input type="text" name="name" required placeholder="Jo Smith">
+            </label>
+            <label>Email *
+              <input type="email" name="email" required placeholder="you@business.com">
+            </label>
+            <label>Phone
+              <input type="tel" name="phone" placeholder="(602) 555-0100">
+            </label>
+            <label>Website
+              <input type="text" name="website" placeholder="acmesalon.com">
+            </label>
+            <label>What kind of business?
+              <select name="vertical">
+                <option value="">Choose one…</option>
+                <option>Therapy / counseling practice</option>
+                <option>Salon / beauty / wellness</option>
+                <option>Credit repair / business funding</option>
+                <option>E-commerce / apparel</option>
+                <option>Home services</option>
+                <option>Other service business</option>
+              </select>
+            </label>
+            <label>Team size
+              <select name="teamSize">
+                <option value="">Choose one…</option>
+                <option>Just me</option>
+                <option>2–5</option>
+                <option>6–15</option>
+                <option>16–50</option>
+                <option>50+</option>
+              </select>
+            </label>
+            <label>Monthly revenue (rough)
+              <select name="revenue">
+                <option value="">Prefer not to say</option>
+                <option>Under $10k</option>
+                <option>$10k–$30k</option>
+                <option>$30k–$80k</option>
+                <option>$80k–$200k</option>
+                <option>$200k+</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset class="pain-set">
+            <legend>Where do you feel the leaks? (check all that apply)</legend>
+            <div class="pain-grid">
+              <label><input type="checkbox" name="pains" value="missed calls"> Missed calls</label>
+              <label><input type="checkbox" name="pains" value="slow follow-up"> Slow lead follow-up</label>
+              <label><input type="checkbox" name="pains" value="no-shows"> No-shows</label>
+              <label><input type="checkbox" name="pains" value="reviews"> Not enough reviews</label>
+              <label><input type="checkbox" name="pains" value="manual admin"> Manual admin / bookkeeping</label>
+              <label><input type="checkbox" name="pains" value="marketing content"> Marketing content</label>
+              <label><input type="checkbox" name="pains" value="scheduling"> Scheduling chaos</label>
+              <label><input type="checkbox" name="pains" value="other"> Something else</label>
+            </div>
+          </fieldset>
+
+          <label class="full">What tools do you run on today?
+            <input type="text" name="tools" placeholder="e.g. QuickBooks, Calendly, Instagram, spreadsheets…">
+          </label>
+
+          <label class="full">Anything else we should know?
+            <textarea name="notes" rows="4" placeholder="Biggest headache, goals, timeline…"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-lg">Send it — get my assessment started</button>
+          <p class="intake-fineprint">We reply within one business day. Your answers stay between us — no lists, no spam.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo-mark.png" alt="Stratum 137" class="footer-mark">
+      <span>STRATUM 137</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#services">Assessment</a>
+      <a href="index.html#services">AI Revenue Engine</a>
+      <a href="mailto:info@stratum137.com">info@stratum137.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  if (new URLSearchParams(location.search).get("sent") === "1") {
+    document.getElementById("formwrap").hidden = true;
+    document.getElementById("thanks").hidden = false;
+  }
+</script>
+
+</body>
+</html>
