@@ -271,6 +271,16 @@ a { color: inherit; text-decoration: none; }
 .outcome-art {
   margin: 0;
   border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.outcome-art::after,
+.service-art::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), transparent 42%);
+  pointer-events: none;
 }
 
 .outcome-art svg,
@@ -369,6 +379,7 @@ a { color: inherit; text-decoration: none; }
 .service-art {
   margin: 0;
   border-bottom: 1px solid var(--border);
+  position: relative;
 }
 
 .service-art svg,
