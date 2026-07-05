@@ -245,33 +245,57 @@ a { color: inherit; text-decoration: none; }
 .lead.center { margin: 32px auto 0; text-align: center; }
 .lead.emphasis { color: var(--text); font-weight: 500; margin-top: 36px; }
 
-/* Problem stats */
-.stat-grid {
+/* Problem → Fixed outcome cards */
+.outcome-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin: 36px 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin: 40px 0 8px;
 }
 
-.stat-card {
+.outcome-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
-.stat-num {
-  font-family: var(--font-display);
-  font-size: 2.1rem;
-  font-weight: 700;
-  color: var(--teal);
-  margin-bottom: 10px;
+.outcome-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-3px);
 }
 
-.stat-label { color: var(--text-dim); font-size: 0.94rem; }
+.outcome-art {
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.outcome-art svg,
+.outcome-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.outcome-copy { padding: 24px 26px 28px; }
+
+.outcome-before {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  border-left: 2px solid rgba(94, 234, 212, 0.35);
+  padding-left: 12px;
+  margin-bottom: 14px;
+}
+
+.outcome-copy h3 { font-size: 1.28rem; margin-bottom: 10px; color: var(--teal); }
+
+.outcome-copy p { color: var(--text-dim); font-size: 0.96rem; }
 
 @media (max-width: 860px) {
-  .stat-grid { grid-template-columns: 1fr; }
+  .outcome-grid { grid-template-columns: 1fr; }
 }
 
 /* About */
@@ -330,13 +354,35 @@ a { color: inherit; text-decoration: none; }
   gap: 28px;
 }
 
+.service-cards.three { grid-template-columns: repeat(3, 1fr); }
+
 .service-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 36px 32px;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.service-art {
+  margin: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.service-art svg,
+.service-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.service-body {
+  padding: 28px 26px 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .service-card.highlight {
@@ -402,6 +448,10 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-display);
   font-weight: 600;
   color: var(--text);
+}
+
+@media (max-width: 1024px) {
+  .service-cards.three { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {
