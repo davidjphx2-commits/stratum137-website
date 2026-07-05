@@ -159,59 +159,62 @@
         </div>
 
         <div class="outcome-card">
-          <figure class="outcome-art" aria-hidden="true">
-            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <figure class="outcome-art photo" aria-hidden="true">
+            <img src="assets/img/outcome-reviews.jpg" alt="" loading="lazy">
+            <div class="art-duo" style="opacity:0.24"></div>
+            <div class="art-tint" style="background:linear-gradient(165deg,rgba(9,13,20,0.5),rgba(9,13,20,0.18) 45%,rgba(45,212,191,0.1))"></div>
+            <svg class="art-overlay" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="orv-bg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#101827"/>
-                  <stop offset="100%" stop-color="#090d14"/>
+                <linearGradient id="orv2-gold" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#ffe9a8"/>
+                  <stop offset="50%" stop-color="#fbbf24"/>
+                  <stop offset="100%" stop-color="#b45309"/>
                 </linearGradient>
-                <radialGradient id="orv-halo" cx="72%" cy="42%" r="55%">
-                  <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.24"/>
-                  <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="orv-star" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#a5fbe8"/>
-                  <stop offset="50%" stop-color="#2dd4bf"/>
-                  <stop offset="100%" stop-color="#0e7a6e"/>
+                <linearGradient id="orv2-card" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#ffffff"/>
+                  <stop offset="100%" stop-color="#dde6ee"/>
                 </linearGradient>
-                <linearGradient id="orv-starHot" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#e6fffa"/>
-                  <stop offset="45%" stop-color="#5eead4"/>
-                  <stop offset="100%" stop-color="#14a396"/>
-                </linearGradient>
-                <filter id="orv-sh" x="-40%" y="-40%" width="180%" height="180%">
-                  <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+                <filter id="orv2-glow" x="-80%" y="-80%" width="260%" height="260%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#fbbf24" flood-opacity="0.65"/>
                 </filter>
-                <filter id="orv-glow" x="-80%" y="-80%" width="260%" height="260%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#2dd4bf" flood-opacity="0.65"/>
+                <filter id="orv2-sh" x="-40%" y="-40%" width="180%" height="180%">
+                  <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
                 </filter>
-                <filter id="orv-blur"><feGaussianBlur stdDeviation="5"/></filter>
+                <path id="orv2-star" d="M0,-10 L2.94,-3.09 10,-3.09 4.05,1.18 5.88,8.09 0,4 -5.88,8.09 -4.05,1.18 -10,-3.09 -2.94,-3.09 Z"/>
               </defs>
-              <rect width="400" height="300" fill="url(#orv-bg)"/>
-              <rect width="400" height="300" fill="url(#orv-halo)"/>
-              <ellipse cx="84" cy="212" rx="26" ry="6" fill="#000000" opacity="0.5" filter="url(#orv-blur)"/>
-              <ellipse cx="156" cy="204" rx="26" ry="6" fill="#000000" opacity="0.5" filter="url(#orv-blur)"/>
-              <ellipse cx="228" cy="196" rx="26" ry="6" fill="#000000" opacity="0.5" filter="url(#orv-blur)"/>
-              <ellipse cx="300" cy="188" rx="28" ry="7" fill="#000000" opacity="0.5" filter="url(#orv-blur)"/>
-              <g transform="translate(0,-6)">
-                <g filter="url(#orv-sh)">
-                  <path d="M84 150l8.2 16.6 18.3 2.7-13.2 12.9 3.1 18.2-16.4-8.6-16.4 8.6 3.1-18.2-13.2-12.9 18.3-2.7z" fill="url(#orv-star)" opacity="0.65"/>
-                  <path d="M156 142l8.2 16.6 18.3 2.7-13.2 12.9 3.1 18.2-16.4-8.6-16.4 8.6 3.1-18.2-13.2-12.9 18.3-2.7z" fill="url(#orv-star)" opacity="0.8"/>
-                  <path d="M228 134l8.2 16.6 18.3 2.7-13.2 12.9 3.1 18.2-16.4-8.6-16.4 8.6 3.1-18.2-13.2-12.9 18.3-2.7z" fill="url(#orv-star)" opacity="0.92"/>
-                </g>
-                <g filter="url(#orv-glow)">
-                  <path d="M300 126l8.2 16.6 18.3 2.7-13.2 12.9 3.1 18.2-16.4-8.6-16.4 8.6 3.1-18.2-13.2-12.9 18.3-2.7z" fill="url(#orv-starHot)"/>
-                </g>
-                <path d="M80 158l4-8 4 8" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M152 150l4-8 4 8" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M224 142l4-8 4 8" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M296 134l4-8 4 8" fill="none" stroke="#ffffff" stroke-opacity="0.8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <g filter="url(#orv2-glow)">
+                <use href="#orv2-star" fill="url(#orv2-gold)" transform="translate(148,132) scale(0.75)" opacity="0.75"/>
+                <use href="#orv2-star" fill="url(#orv2-gold)" transform="translate(190,100) scale(1.05)" opacity="0.85"/>
+                <use href="#orv2-star" fill="url(#orv2-gold)" transform="translate(238,68) scale(1.5)"/>
+                <use href="#orv2-star" fill="url(#orv2-gold)" transform="translate(292,96) scale(1.0)" opacity="0.85"/>
+                <use href="#orv2-star" fill="url(#orv2-gold)" transform="translate(334,132) scale(0.7)" opacity="0.65"/>
               </g>
-              <path d="M60 234 Q200 200 344 134" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-dasharray="3 7" stroke-linecap="round" opacity="0.7" filter="url(#orv-glow)"/>
-              <path d="M344 134l-14 2m14-2l-4 13" stroke="#8cf7e2" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-              <circle cx="330" cy="72" r="2.5" fill="#8cf7e2" opacity="0.8"/>
-              <circle cx="356" cy="94" r="1.8" fill="#5eead4" opacity="0.5"/>
+              <g filter="url(#orv2-sh)" transform="rotate(-4 106 62)">
+                <rect x="48" y="40" width="116" height="44" rx="10" fill="url(#orv2-card)"/>
+                <path d="M96 84l-6 12 18-6z" fill="#dde6ee"/>
+                <g transform="translate(62,54)">
+                  <use href="#orv2-star" fill="#f59e0b" transform="scale(0.34)"/>
+                  <use href="#orv2-star" fill="#f59e0b" transform="translate(11,0) scale(0.34)"/>
+                  <use href="#orv2-star" fill="#f59e0b" transform="translate(22,0) scale(0.34)"/>
+                  <use href="#orv2-star" fill="#f59e0b" transform="translate(33,0) scale(0.34)"/>
+                  <use href="#orv2-star" fill="#f59e0b" transform="translate(44,0) scale(0.34)"/>
+                </g>
+                <rect x="58" y="64" width="88" height="4" rx="2" fill="#93a3ab"/>
+                <rect x="58" y="72" width="58" height="4" rx="2" fill="#b8c4cc"/>
+              </g>
+              <g filter="url(#orv2-sh)" transform="rotate(3 320 190)">
+                <rect x="272" y="168" width="100" height="38" rx="9" fill="url(#orv2-card)" opacity="0.96"/>
+                <path d="M316 206l-5 10 15-5z" fill="#dde6ee"/>
+                <g transform="translate(284,180)">
+                  <use href="#orv2-star" fill="#f59e0b" transform="scale(0.3)"/>
+                  <use href="#orv2-star" fill="#f59e0b" transform="translate(9.5,0) scale(0.3)"/>
+                  <use href="#orv2-star" fill="#f59e0b" transform="translate(19,0) scale(0.3)"/>
+                  <use href="#orv2-star" fill="#f59e0b" transform="translate(28.5,0) scale(0.3)"/>
+                  <use href="#orv2-star" fill="#f59e0b" transform="translate(38,0) scale(0.3)"/>
+                </g>
+                <rect x="281" y="189" width="76" height="3.5" rx="1.75" fill="#93a3ab"/>
+                <rect x="281" y="196" width="48" height="3.5" rx="1.75" fill="#b8c4cc"/>
+              </g>
             </svg>
           </figure>
           <div class="outcome-copy">

@@ -11,6 +11,6 @@ sourced via Openverse search on 2026-07-05. Verify links before any reuse beyond
 | svc-assessment.jpg | "Office Work" | https://stocksnap.io/photo/office-work-42H3JH8QI5 |
 | svc-engine.jpg | "phonography night" | https://www.rawpixel.com/image/3289637/free-photo-image-astronomy-boke |
 | svc-growth.jpg | "Social media applications mobile screen" | https://www.rawpixel.com/image/6112098/photo-image-phone-public-domain |
+| outcome-reviews.jpg | "House Home" | https://stocksnap.io/photo/house-home-LJ515CPAKI |
 
 Crops/tints/overlays applied in-repo. Originals live at the source links.
-The reviews card intentionally remains an original SVG illustration.
