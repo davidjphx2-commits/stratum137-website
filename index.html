@@ -59,68 +59,29 @@
       <div class="outcome-grid">
 
         <div class="outcome-card">
-          <figure class="outcome-art" aria-hidden="true">
-            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <figure class="outcome-art photo" aria-hidden="true">
+            <img src="assets/img/outcome-calls.jpg" alt="" loading="lazy">
+            <div class="art-duo"></div>
+            <div class="art-tint"></div>
+            <svg class="art-overlay" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="oc-bg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#101827"/>
-                  <stop offset="100%" stop-color="#090d14"/>
-                </linearGradient>
-                <radialGradient id="oc-halo" cx="50%" cy="45%" r="60%">
-                  <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.3"/>
-                  <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="oc-body" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#2c3d52"/>
-                  <stop offset="55%" stop-color="#16202e"/>
-                  <stop offset="100%" stop-color="#0b111b"/>
-                </linearGradient>
-                <linearGradient id="oc-screen" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#123632"/>
-                  <stop offset="100%" stop-color="#081513"/>
-                </linearGradient>
-                <radialGradient id="oc-orb" cx="35%" cy="28%" r="80%">
+                <radialGradient id="oc2-orb" cx="35%" cy="28%" r="80%">
                   <stop offset="0%" stop-color="#b9fff0"/>
                   <stop offset="45%" stop-color="#2dd4bf"/>
                   <stop offset="100%" stop-color="#0c6b60"/>
                 </radialGradient>
-                <linearGradient id="oc-moon" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#3c5c8c"/>
-                  <stop offset="100%" stop-color="#16263c"/>
-                </linearGradient>
-                <filter id="oc-sh" x="-40%" y="-40%" width="180%" height="180%">
-                  <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#000000" flood-opacity="0.55"/>
+                <filter id="oc2-glow" x="-80%" y="-80%" width="260%" height="260%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#2dd4bf" flood-opacity="0.7"/>
                 </filter>
-                <filter id="oc-glow" x="-80%" y="-80%" width="260%" height="260%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#2dd4bf" flood-opacity="0.6"/>
-                </filter>
-                <filter id="oc-blur"><feGaussianBlur stdDeviation="7"/></filter>
               </defs>
-              <rect width="400" height="300" fill="url(#oc-bg)"/>
-              <circle cx="200" cy="140" r="132" fill="url(#oc-halo)"/>
-              <path d="M330 48a26 26 0 1 0 0 44 20 20 0 1 1 0-44z" fill="url(#oc-moon)" filter="url(#oc-sh)"/>
-              <path d="M312 52a24 24 0 0 1 16-6" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="352" cy="46" r="2.5" fill="#8cf7e2"/>
-              <circle cx="66" cy="70" r="2" fill="#5eead4" opacity="0.6"/>
-              <circle cx="92" cy="44" r="1.5" fill="#5eead4" opacity="0.4"/>
-              <circle cx="200" cy="140" r="54" fill="none" stroke="#2dd4bf" stroke-opacity="0.55" stroke-width="2"/>
-              <circle cx="200" cy="140" r="78" fill="none" stroke="#2dd4bf" stroke-opacity="0.3" stroke-width="2"/>
-              <circle cx="200" cy="140" r="102" fill="none" stroke="#2dd4bf" stroke-opacity="0.14" stroke-width="2"/>
-              <ellipse cx="200" cy="216" rx="52" ry="10" fill="#000000" opacity="0.55" filter="url(#oc-blur)"/>
-              <g filter="url(#oc-sh)">
-                <rect x="174" y="102" width="52" height="80" rx="12" fill="url(#oc-body)"/>
-                <rect x="174.75" y="102.75" width="50.5" height="78.5" rx="11.4" fill="none" stroke="#8cf7e2" stroke-opacity="0.55" stroke-width="1.5"/>
-                <path d="M186 103.5h28" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="196" cy="138" r="48" fill="none" stroke="#2dd4bf" stroke-opacity="0.6" stroke-width="2"/>
+              <circle cx="196" cy="138" r="74" fill="none" stroke="#2dd4bf" stroke-opacity="0.32" stroke-width="2"/>
+              <circle cx="196" cy="138" r="100" fill="none" stroke="#2dd4bf" stroke-opacity="0.15" stroke-width="2"/>
+              <g filter="url(#oc2-glow)">
+                <circle cx="196" cy="138" r="16" fill="url(#oc2-orb)"/>
+                <ellipse cx="190.5" cy="131.5" rx="6" ry="4" fill="#ffffff" opacity="0.55"/>
               </g>
-              <rect x="181" y="112" width="38" height="56" rx="6" fill="url(#oc-screen)"/>
-              <polygon points="181,112 199,112 188,168 181,168" fill="#ffffff" opacity="0.06"/>
-              <rect x="192" y="106" width="16" height="3" rx="1.5" fill="#0a0f17"/>
-              <g filter="url(#oc-glow)">
-                <circle cx="200" cy="140" r="13" fill="url(#oc-orb)"/>
-                <ellipse cx="195.5" cy="134.5" rx="5" ry="3.2" fill="#ffffff" opacity="0.55"/>
-              </g>
-              <path d="M194 140l4.5 5 9-11" fill="none" stroke="#062a25" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M120 240c40 18 120 18 160 0" fill="none" stroke="#2dd4bf" stroke-opacity="0.4" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>
+              <path d="M189 138l5.5 6 11-13" fill="none" stroke="#062a25" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </figure>
           <div class="outcome-copy">
@@ -131,63 +92,32 @@
         </div>
 
         <div class="outcome-card">
-          <figure class="outcome-art" aria-hidden="true">
-            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <figure class="outcome-art photo" aria-hidden="true">
+            <img src="assets/img/outcome-followup.jpg" alt="" loading="lazy">
+            <div class="art-duo"></div>
+            <div class="art-tint"></div>
+            <svg class="art-overlay" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="of-bg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#101827"/>
-                  <stop offset="100%" stop-color="#090d14"/>
-                </linearGradient>
-                <radialGradient id="of-halo" cx="65%" cy="55%" r="60%">
-                  <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.24"/>
-                  <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="of-in" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#2a3a4e"/>
-                  <stop offset="100%" stop-color="#121b27"/>
-                </linearGradient>
-                <linearGradient id="of-teal" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id="of2-teal" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stop-color="#8cf7e2"/>
                   <stop offset="45%" stop-color="#2dd4bf"/>
                   <stop offset="100%" stop-color="#117c70"/>
                 </linearGradient>
-                <linearGradient id="of-bolt" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#d8fff5"/>
-                  <stop offset="100%" stop-color="#2dd4bf"/>
-                </linearGradient>
-                <filter id="of-sh" x="-40%" y="-40%" width="180%" height="180%">
-                  <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#000000" flood-opacity="0.55"/>
-                </filter>
-                <filter id="of-glow" x="-80%" y="-80%" width="260%" height="260%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#2dd4bf" flood-opacity="0.55"/>
+                <filter id="of2-glow" x="-60%" y="-60%" width="220%" height="220%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#2dd4bf" flood-opacity="0.65"/>
                 </filter>
               </defs>
-              <rect width="400" height="300" fill="url(#of-bg)"/>
-              <rect width="400" height="300" fill="url(#of-halo)"/>
-              <g filter="url(#of-sh)">
-                <rect x="52" y="70" width="150" height="58" rx="16" fill="url(#of-in)"/>
-                <path d="M78 128l-8 16 22-8z" fill="#121b27"/>
-                <path d="M68 71.5h118" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.5" stroke-linecap="round"/>
+              <g filter="url(#of2-glow)">
+                <rect x="196" y="104" width="112" height="42" rx="14" fill="url(#of2-teal)"/>
+                <path d="M258 146l8 18-24-10z" fill="#117c70"/>
+                <path d="M210 105.5h84" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"/>
               </g>
-              <rect x="70" y="88" width="80" height="5" rx="2.5" fill="#6b7a86"/>
-              <rect x="70" y="102" width="52" height="5" rx="2.5" fill="#6b7a86" opacity="0.6"/>
-              <g filter="url(#of-sh)">
-                <rect x="190" y="150" width="160" height="64" rx="16" fill="url(#of-teal)"/>
-                <path d="M330 214l10 16-24-8z" fill="#117c70"/>
-                <path d="M206 151.5h128" stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round"/>
-                <polygon points="196,150 262,150 236,214 196,214" fill="#ffffff" opacity="0.10"/>
+              <circle cx="222" cy="125" r="4" fill="#04211d"/>
+              <circle cx="240" cy="125" r="4" fill="#04211d" opacity="0.75"/>
+              <circle cx="258" cy="125" r="4" fill="#04211d" opacity="0.5"/>
+              <g filter="url(#of2-glow)">
+                <path d="M296 78l-10 22h12l-8 20 26-28h-14l9-14z" fill="#d8fff5"/>
               </g>
-              <rect x="208" y="168" width="96" height="5" rx="2.5" fill="#04211d" opacity="0.7"/>
-              <rect x="208" y="184" width="64" height="5" rx="2.5" fill="#04211d" opacity="0.5"/>
-              <g filter="url(#of-glow)">
-                <path d="M226 92l-14 30h16l-10 26 34-38h-18l12-18z" fill="url(#of-bolt)"/>
-              </g>
-              <path d="M224 95l-6 13" stroke="#ffffff" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round"/>
-              <g filter="url(#of-sh)">
-                <circle cx="316" cy="96" r="26" fill="none" stroke="url(#of-teal)" stroke-width="4"/>
-              </g>
-              <path d="M298 78a26 26 0 0 1 22-7" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"/>
-              <path d="M316 84v12l10 7" fill="none" stroke="#8cf7e2" stroke-width="3" stroke-linecap="round"/>
             </svg>
           </figure>
           <div class="outcome-copy">
@@ -198,72 +128,27 @@
         </div>
 
         <div class="outcome-card">
-          <figure class="outcome-art" aria-hidden="true">
-            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <figure class="outcome-art photo" aria-hidden="true">
+            <img src="assets/img/outcome-schedule.jpg" alt="" loading="lazy">
+            <div class="art-duo"></div>
+            <div class="art-tint"></div>
+            <svg class="art-overlay" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="os-bg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#101827"/>
-                  <stop offset="100%" stop-color="#090d14"/>
-                </linearGradient>
-                <radialGradient id="os-halo" cx="50%" cy="40%" r="65%">
-                  <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.2"/>
-                  <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="os-panel" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#1b2836"/>
-                  <stop offset="100%" stop-color="#0b111b"/>
-                </linearGradient>
-                <linearGradient id="os-head" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#33578a"/>
-                  <stop offset="100%" stop-color="#182c47"/>
-                </linearGradient>
-                <linearGradient id="os-chip" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#8cf7e2"/>
-                  <stop offset="45%" stop-color="#2dd4bf"/>
-                  <stop offset="100%" stop-color="#128276"/>
-                </linearGradient>
-                <radialGradient id="os-orb" cx="35%" cy="28%" r="80%">
+                <radialGradient id="os2-orb" cx="35%" cy="28%" r="80%">
                   <stop offset="0%" stop-color="#b9fff0"/>
                   <stop offset="45%" stop-color="#2dd4bf"/>
                   <stop offset="100%" stop-color="#0c6b60"/>
                 </radialGradient>
-                <filter id="os-sh" x="-40%" y="-40%" width="180%" height="180%">
-                  <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.55"/>
-                </filter>
-                <filter id="os-chipsh" x="-40%" y="-40%" width="180%" height="180%">
-                  <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.45"/>
-                </filter>
-                <filter id="os-glow" x="-80%" y="-80%" width="260%" height="260%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#2dd4bf" flood-opacity="0.6"/>
+                <filter id="os2-glow" x="-80%" y="-80%" width="260%" height="260%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#2dd4bf" flood-opacity="0.7"/>
                 </filter>
               </defs>
-              <rect width="400" height="300" fill="url(#os-bg)"/>
-              <rect width="400" height="300" fill="url(#os-halo)"/>
-              <g filter="url(#os-sh)">
-                <rect x="92" y="56" width="216" height="192" rx="14" fill="url(#os-panel)"/>
-                <rect x="92" y="56" width="216" height="38" rx="14" fill="url(#os-head)"/>
-                <rect x="92" y="80" width="216" height="14" fill="url(#os-head)"/>
-                <path d="M106 57.5h188" stroke="#ffffff" stroke-opacity="0.3" stroke-width="1.5" stroke-linecap="round"/>
-                <rect x="92.75" y="56.75" width="214.5" height="190.5" rx="13.4" fill="none" stroke="#5eead4" stroke-opacity="0.25" stroke-width="1.5"/>
+              <circle cx="140" cy="210" r="34" fill="none" stroke="#2dd4bf" stroke-opacity="0.5" stroke-width="2"/>
+              <g filter="url(#os2-glow)">
+                <circle cx="140" cy="210" r="21" fill="url(#os2-orb)"/>
+                <ellipse cx="133" cy="202" rx="7.5" ry="5" fill="#ffffff" opacity="0.55"/>
               </g>
-              <circle cx="118" cy="75" r="4" fill="#8cf7e2"/>
-              <circle cx="136" cy="75" r="4" fill="#8cf7e2" opacity="0.5"/>
-              <g filter="url(#os-chipsh)">
-                <rect x="108" y="110" width="52" height="26" rx="7" fill="url(#os-chip)"/>
-                <rect x="174" y="110" width="52" height="26" rx="7" fill="url(#os-chip)" opacity="0.6"/>
-                <rect x="240" y="110" width="52" height="26" rx="7" fill="url(#os-chip)" opacity="0.8"/>
-                <rect x="108" y="150" width="52" height="26" rx="7" fill="url(#os-chip)" opacity="0.65"/>
-                <rect x="174" y="150" width="52" height="26" rx="7" fill="url(#os-chip)" opacity="0.9"/>
-                <rect x="240" y="150" width="52" height="26" rx="7" fill="url(#os-chip)" opacity="0.5"/>
-                <rect x="108" y="190" width="52" height="26" rx="7" fill="url(#os-chip)" opacity="0.75"/>
-                <rect x="174" y="190" width="52" height="26" rx="7" fill="url(#os-chip)" opacity="0.55"/>
-              </g>
-              <path d="M114 111.5h40M180 111.5h40M246 111.5h40M114 151.5h40M180 151.5h40M246 151.5h40M114 191.5h40M180 191.5h40" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round"/>
-              <g filter="url(#os-glow)">
-                <circle cx="292" cy="204" r="27" fill="url(#os-orb)"/>
-                <ellipse cx="283" cy="193" rx="10" ry="6" fill="#ffffff" opacity="0.5"/>
-              </g>
-              <path d="M280 204l9 10 17-19" fill="none" stroke="#062a25" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M130 210l7.5 8.5 14-16" fill="none" stroke="#062a25" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </figure>
           <div class="outcome-copy">
@@ -367,71 +252,28 @@
 
       <div class="service-cards three">
         <div class="service-card">
-          <figure class="service-art" aria-hidden="true">
-            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+          <figure class="service-art photo" aria-hidden="true">
+            <img src="assets/img/svc-assessment.jpg" alt="" loading="lazy">
+            <div class="art-duo"></div>
+            <div class="art-tint"></div>
+            <svg class="art-overlay" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="sa-bg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#101827"/>
-                  <stop offset="100%" stop-color="#090d14"/>
-                </linearGradient>
-                <linearGradient id="sa-l1" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#31445c"/>
-                  <stop offset="100%" stop-color="#1c2938"/>
-                </linearGradient>
-                <linearGradient id="sa-l2" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#2a3c52"/>
-                  <stop offset="100%" stop-color="#182430"/>
-                </linearGradient>
-                <linearGradient id="sa-l3" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#243348"/>
-                  <stop offset="100%" stop-color="#141e29"/>
-                </linearGradient>
-                <linearGradient id="sa-seam" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#8cf7e2"/>
-                  <stop offset="50%" stop-color="#2dd4bf"/>
-                  <stop offset="100%" stop-color="#0f8579"/>
-                </linearGradient>
-                <radialGradient id="sa-glass" cx="35%" cy="30%" r="80%">
-                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
-                  <stop offset="45%" stop-color="#2dd4bf" stop-opacity="0.10"/>
-                  <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0.02"/>
-                </radialGradient>
-                <linearGradient id="sa-rim" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id="sa2-teal" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stop-color="#a5fbe8"/>
-                  <stop offset="100%" stop-color="#128276"/>
+                  <stop offset="100%" stop-color="#14a396"/>
                 </linearGradient>
-                <filter id="sa-sh" x="-30%" y="-30%" width="160%" height="160%">
-                  <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.55"/>
-                </filter>
-                <filter id="sa-glow" x="-60%" y="-60%" width="220%" height="220%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#2dd4bf" flood-opacity="0.55"/>
+                <filter id="sa2-glow" x="-60%" y="-60%" width="220%" height="220%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#2dd4bf" flood-opacity="0.65"/>
                 </filter>
               </defs>
-              <rect width="640" height="300" fill="url(#sa-bg)"/>
-              <g filter="url(#sa-sh)">
-                <rect x="60" y="94" width="520" height="26" rx="6" fill="url(#sa-l1)"/>
-                <rect x="60" y="120" width="520" height="5" rx="2" fill="#0d141d"/>
-                <rect x="60" y="162" width="520" height="26" rx="6" fill="url(#sa-l2)"/>
-                <rect x="60" y="188" width="520" height="5" rx="2" fill="#0c121a"/>
-                <rect x="60" y="196" width="520" height="26" rx="6" fill="url(#sa-l3)"/>
-                <rect x="60" y="222" width="520" height="5" rx="2" fill="#0a0f16"/>
+              <path d="M120 262 C 240 236, 330 250, 470 212" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-dasharray="4 8" stroke-linecap="round" opacity="0.8" filter="url(#sa2-glow)"/>
+              <g filter="url(#sa2-glow)">
+                <circle cx="480" cy="209" r="13" fill="none" stroke="url(#sa2-teal)" stroke-width="4"/>
+                <circle cx="480" cy="209" r="4.5" fill="#b9fff0"/>
               </g>
-              <path d="M68 95.5h504M68 163.5h504M68 197.5h504" stroke="#ffffff" stroke-opacity="0.14" stroke-width="1.5" stroke-linecap="round"/>
-              <g filter="url(#sa-glow)">
-                <rect x="60" y="128" width="520" height="26" rx="6" fill="url(#sa-seam)"/>
-                <rect x="60" y="154" width="520" height="5" rx="2" fill="#0a5b52"/>
-              </g>
-              <path d="M68 129.5h504" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round"/>
-              <g filter="url(#sa-sh)">
-                <circle cx="320" cy="141" r="58" fill="url(#sa-glass)"/>
-                <circle cx="320" cy="141" r="58" fill="none" stroke="url(#sa-rim)" stroke-width="6"/>
-                <line x1="363" y1="184" x2="406" y2="227" stroke="url(#sa-rim)" stroke-width="10" stroke-linecap="round"/>
-              </g>
-              <path d="M282 116a48 48 0 0 1 34-19" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round"/>
-              <path d="M292 141h56m-28-28v56" stroke="#eafffa" stroke-width="1.5" opacity="0.5"/>
-              <path d="M470 128v-38h44" fill="none" stroke="#5eead4" stroke-width="2.5" stroke-dasharray="3 6" opacity="0.8"/>
-              <g filter="url(#sa-glow)">
-                <path d="M514 78l16 8-16 8z" fill="url(#sa-rim)"/>
+              <path d="M480 196v-30" stroke="url(#sa2-teal)" stroke-width="3" stroke-linecap="round"/>
+              <g filter="url(#sa2-glow)">
+                <path d="M480 166l24 8-24 8z" fill="url(#sa2-teal)"/>
               </g>
             </svg>
           </figure>
@@ -455,68 +297,32 @@
         </div>
 
         <div class="service-card highlight">
-          <figure class="service-art" aria-hidden="true">
-            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+          <figure class="service-art photo" aria-hidden="true">
+            <img src="assets/img/svc-engine.jpg" alt="" loading="lazy">
+            <div class="art-duo"></div>
+            <div class="art-tint"></div>
+            <svg class="art-overlay" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="se-bg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#101827"/>
-                  <stop offset="100%" stop-color="#090d14"/>
-                </linearGradient>
-                <radialGradient id="se-halo" cx="50%" cy="50%" r="55%">
-                  <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.32"/>
-                  <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
-                </radialGradient>
-                <radialGradient id="se-sphere" cx="35%" cy="28%" r="85%">
+                <radialGradient id="se2-sphere" cx="35%" cy="28%" r="85%">
                   <stop offset="0%" stop-color="#d8fff5"/>
                   <stop offset="35%" stop-color="#5eead4"/>
                   <stop offset="75%" stop-color="#14a396"/>
                   <stop offset="100%" stop-color="#085c53"/>
                 </radialGradient>
-                <linearGradient id="se-chip" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#2a3a4e"/>
-                  <stop offset="100%" stop-color="#121b27"/>
-                </linearGradient>
-                <linearGradient id="se-icon" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#a5fbe8"/>
-                  <stop offset="100%" stop-color="#1aa093"/>
-                </linearGradient>
-                <filter id="se-sh" x="-40%" y="-40%" width="180%" height="180%">
-                  <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#000000" flood-opacity="0.55"/>
+                <filter id="se2-glow" x="-80%" y="-80%" width="260%" height="260%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="11" flood-color="#2dd4bf" flood-opacity="0.65"/>
                 </filter>
-                <filter id="se-glow" x="-80%" y="-80%" width="260%" height="260%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#2dd4bf" flood-opacity="0.6"/>
-                </filter>
-                <filter id="se-blur"><feGaussianBlur stdDeviation="7"/></filter>
               </defs>
-              <rect width="640" height="300" fill="url(#se-bg)"/>
-              <circle cx="320" cy="150" r="125" fill="url(#se-halo)"/>
-              <path d="M320 150 L150 80 M320 150 L150 220 M320 150 L490 80 M320 150 L490 220" stroke="#2dd4bf" stroke-width="2.5" stroke-dasharray="4 7" opacity="0.6" filter="url(#se-glow)"/>
-              <ellipse cx="320" cy="208" rx="46" ry="9" fill="#000000" opacity="0.5" filter="url(#se-blur)"/>
-              <ellipse cx="320" cy="150" rx="62" ry="20" fill="none" stroke="#5eead4" stroke-opacity="0.3" stroke-width="1.5" transform="rotate(-18 320 150)"/>
-              <g filter="url(#se-glow)">
-                <circle cx="320" cy="150" r="40" fill="url(#se-sphere)"/>
+              <path d="M320 150 L150 74 M320 150 L150 226 M320 150 L490 74 M320 150 L490 226" stroke="#2dd4bf" stroke-width="2.5" stroke-dasharray="4 7" opacity="0.7" filter="url(#se2-glow)"/>
+              <circle cx="150" cy="74" r="7" fill="#8cf7e2" filter="url(#se2-glow)"/>
+              <circle cx="150" cy="226" r="7" fill="#8cf7e2" filter="url(#se2-glow)"/>
+              <circle cx="490" cy="74" r="7" fill="#8cf7e2" filter="url(#se2-glow)"/>
+              <circle cx="490" cy="226" r="7" fill="#8cf7e2" filter="url(#se2-glow)"/>
+              <ellipse cx="320" cy="150" rx="56" ry="18" fill="none" stroke="#5eead4" stroke-opacity="0.35" stroke-width="1.5" transform="rotate(-18 320 150)"/>
+              <g filter="url(#se2-glow)">
+                <circle cx="320" cy="150" r="30" fill="url(#se2-sphere)"/>
               </g>
-              <ellipse cx="306" cy="134" rx="15" ry="9" fill="#ffffff" opacity="0.55"/>
-              <circle cx="320" cy="150" r="40" fill="none" stroke="#0a4740" stroke-opacity="0.5" stroke-width="1.5"/>
-              <g filter="url(#se-sh)">
-                <rect x="112" y="56" width="76" height="48" rx="10" fill="url(#se-chip)"/>
-                <path d="M124 57.5h52" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round"/>
-                <rect x="112" y="196" width="76" height="48" rx="10" fill="url(#se-chip)"/>
-                <path d="M124 197.5h52" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round"/>
-                <rect x="452" y="56" width="76" height="48" rx="10" fill="url(#se-chip)"/>
-                <path d="M464 57.5h52" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round"/>
-                <rect x="452" y="196" width="76" height="48" rx="10" fill="url(#se-chip)"/>
-                <path d="M464 197.5h52" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5" stroke-linecap="round"/>
-              </g>
-              <path d="M132 72c0-4 4-6 8-4l16 8c4 2 4 6 0 8l-16 8c-4 2-8 0-8-4z" fill="url(#se-icon)"/>
-              <rect x="128" y="212" width="44" height="5" rx="2.5" fill="url(#se-icon)"/>
-              <rect x="128" y="224" width="30" height="5" rx="2.5" fill="url(#se-icon)" opacity="0.6"/>
-              <rect x="468" y="70" width="44" height="22" rx="4" fill="none" stroke="url(#se-icon)" stroke-width="2.5"/>
-              <path d="M468 74l22 12 22-12" fill="none" stroke="url(#se-icon)" stroke-width="2.5"/>
-              <rect x="470" y="208" width="40" height="28" rx="4" fill="none" stroke="url(#se-icon)" stroke-width="2.5"/>
-              <path d="M470 216h40" stroke="url(#se-icon)" stroke-width="2.5"/>
-              <circle cx="480" cy="226" r="3" fill="#8cf7e2"/>
-              <circle cx="492" cy="226" r="3" fill="#8cf7e2" opacity="0.6"/>
+              <ellipse cx="309" cy="138" rx="11" ry="7" fill="#ffffff" opacity="0.55"/>
             </svg>
           </figure>
           <div class="service-body">
@@ -540,85 +346,25 @@
         </div>
 
         <div class="service-card">
-          <figure class="service-art" aria-hidden="true">
-            <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
+          <figure class="service-art photo" aria-hidden="true">
+            <img src="assets/img/svc-growth.jpg" alt="" loading="lazy">
+            <div class="art-duo"></div>
+            <div class="art-tint"></div>
+            <svg class="art-overlay" viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="sg-bg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#101827"/>
-                  <stop offset="100%" stop-color="#090d14"/>
-                </linearGradient>
-                <radialGradient id="sg-halo" cx="35%" cy="50%" r="60%">
-                  <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.26"/>
-                  <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0"/>
-                </radialGradient>
-                <linearGradient id="sg-horn" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#3d5a8a"/>
-                  <stop offset="45%" stop-color="#22375a"/>
-                  <stop offset="100%" stop-color="#131f33"/>
-                </linearGradient>
-                <linearGradient id="sg-card" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#28384c"/>
-                  <stop offset="100%" stop-color="#111a25"/>
-                </linearGradient>
-                <linearGradient id="sg-teal" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id="sg2-teal" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stop-color="#a5fbe8"/>
                   <stop offset="100%" stop-color="#14a396"/>
                 </linearGradient>
-                <radialGradient id="sg-li" cx="35%" cy="28%" r="80%">
-                  <stop offset="0%" stop-color="#7fc1f7"/>
-                  <stop offset="50%" stop-color="#0a66c2"/>
-                  <stop offset="100%" stop-color="#053a70"/>
-                </radialGradient>
-                <radialGradient id="sg-ig" cx="35%" cy="28%" r="80%">
-                  <stop offset="0%" stop-color="#f0a3ff"/>
-                  <stop offset="50%" stop-color="#c026d3"/>
-                  <stop offset="100%" stop-color="#6d1178"/>
-                </radialGradient>
-                <radialGradient id="sg-fb" cx="35%" cy="28%" r="80%">
-                  <stop offset="0%" stop-color="#a9c8ff"/>
-                  <stop offset="50%" stop-color="#3b82f6"/>
-                  <stop offset="100%" stop-color="#1d4a94"/>
-                </radialGradient>
-                <filter id="sg-sh" x="-40%" y="-40%" width="180%" height="180%">
-                  <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#000000" flood-opacity="0.55"/>
-                </filter>
-                <filter id="sg-glow" x="-80%" y="-80%" width="260%" height="260%">
-                  <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#2dd4bf" flood-opacity="0.55"/>
+                <filter id="sg2-glow" x="-60%" y="-60%" width="220%" height="220%">
+                  <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#2dd4bf" flood-opacity="0.6"/>
                 </filter>
               </defs>
-              <rect width="640" height="300" fill="url(#sg-bg)"/>
-              <rect width="640" height="300" fill="url(#sg-halo)"/>
-              <g filter="url(#sg-sh)">
-                <path d="M120 130l110-52v128l-110-42z" fill="url(#sg-horn)"/>
-                <path d="M120 130v34l24 10v-34z" fill="#0e1622"/>
-                <path d="M124 128l102-46" stroke="#ffffff" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round"/>
-                <polygon points="150,118 230,80 230,120 150,152" fill="#ffffff" opacity="0.06"/>
+              <g filter="url(#sg2-glow)">
+                <path d="M84 250c30-24 30-96 0-120" fill="none" stroke="url(#sg2-teal)" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+                <path d="M118 232c20-16 20-60 0-84" fill="none" stroke="url(#sg2-teal)" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
+                <path d="M148 216c12-10 12-38 0-52" fill="none" stroke="url(#sg2-teal)" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
               </g>
-              <g filter="url(#sg-glow)">
-                <path d="M230 78c26 20 26 108 0 128" fill="none" stroke="url(#sg-teal)" stroke-width="5" stroke-linecap="round"/>
-                <path d="M286 108c14 12 14 56 0 68" fill="none" stroke="url(#sg-teal)" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
-                <path d="M318 122c8 8 8 32 0 40" fill="none" stroke="url(#sg-teal)" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-              </g>
-              <g filter="url(#sg-sh)">
-                <rect x="380" y="52" width="92" height="60" rx="10" fill="url(#sg-card)" stroke="#2dd4bf" stroke-opacity="0.5" stroke-width="1.5" transform="rotate(-6 426 82)"/>
-                <rect x="392" y="126" width="92" height="60" rx="10" fill="url(#sg-card)" stroke="#2dd4bf" stroke-opacity="0.5" stroke-width="1.5"/>
-                <rect x="380" y="200" width="92" height="60" rx="10" fill="url(#sg-card)" stroke="#2dd4bf" stroke-opacity="0.5" stroke-width="1.5" transform="rotate(5 426 230)"/>
-              </g>
-              <rect x="396" y="70" width="56" height="5" rx="2.5" fill="url(#sg-teal)" transform="rotate(-6 426 82)"/>
-              <rect x="396" y="84" width="38" height="5" rx="2.5" fill="url(#sg-teal)" opacity="0.55" transform="rotate(-6 426 82)"/>
-              <rect x="408" y="142" width="56" height="5" rx="2.5" fill="url(#sg-teal)"/>
-              <rect x="408" y="156" width="38" height="5" rx="2.5" fill="url(#sg-teal)" opacity="0.55"/>
-              <rect x="396" y="216" width="56" height="5" rx="2.5" fill="url(#sg-teal)" transform="rotate(5 426 230)"/>
-              <rect x="396" y="230" width="38" height="5" rx="2.5" fill="url(#sg-teal)" opacity="0.55" transform="rotate(5 426 230)"/>
-              <path d="M472 80l56 2M484 156l64-4M472 228l56-4" stroke="#2dd4bf" stroke-width="1.8" stroke-dasharray="2 5" opacity="0.7"/>
-              <g filter="url(#sg-sh)">
-                <circle cx="540" cy="82" r="12" fill="url(#sg-li)"/>
-                <circle cx="560" cy="150" r="12" fill="url(#sg-ig)"/>
-                <circle cx="540" cy="222" r="12" fill="url(#sg-fb)"/>
-              </g>
-              <ellipse cx="536" cy="77" rx="4.5" ry="3" fill="#ffffff" opacity="0.6"/>
-              <ellipse cx="556" cy="145" rx="4.5" ry="3" fill="#ffffff" opacity="0.6"/>
-              <ellipse cx="536" cy="217" rx="4.5" ry="3" fill="#ffffff" opacity="0.6"/>
             </svg>
           </figure>
           <div class="service-body">

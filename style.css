@@ -281,6 +281,37 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.08), transparent 42%);
   pointer-events: none;
+  z-index: 3;
+}
+
+/* photo figures: real image + navy duotone + tint + glowing SVG overlay */
+.outcome-art.photo img,
+.service-art.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.art-duo {
+  position: absolute;
+  inset: 0;
+  background: var(--blue-deep, #1e3a5f);
+  mix-blend-mode: color;
+  opacity: 0.5;
+}
+
+.art-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(165deg, rgba(9, 13, 20, 0.68), rgba(9, 13, 20, 0.26) 45%, rgba(45, 212, 191, 0.14));
+}
+
+.art-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
 .outcome-art svg,
