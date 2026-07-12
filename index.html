@@ -5,11 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stratum 137 — AI Systems for Service Businesses</title>
 <meta name="description" content="Stratum 137 finds where your business is losing revenue, then fixes it with AI. AI Business Assessment + AI Revenue Engine for service businesses.">
+<link rel="canonical" href="https://stratum137.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stratum137.com/">
+<meta property="og:title" content="Stratum 137 — AI Systems for Service Businesses">
+<meta property="og:description" content="We find where your business is losing revenue. Then we fix it with AI. Assessment in 48 hours, systems live in 14 days, results or you don't pay.">
+<meta property="og:image" content="https://stratum137.com/assets/logo.png">
+<meta property="og:site_name" content="Stratum 137">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Stratum 137 — AI Systems for Service Businesses">
+<meta name="twitter:description" content="We find where your business is losing revenue. Then we fix it with AI.">
+<meta name="twitter:image" content="https://stratum137.com/assets/logo.png">
 <link rel="icon" type="image/png" href="assets/logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Stratum 137",
+  "url": "https://stratum137.com/",
+  "logo": "https://stratum137.com/assets/logo.png",
+  "description": "AI implementation firm for service businesses. AI Business Assessment ($999 flat), AI Revenue Engine (24/7 AI receptionist, 60-second lead response, review automation), and Content Growth Engine.",
+  "email": "david@stratum137.com",
+  "founder": { "@type": "Person", "name": "David Jones" },
+  "areaServed": "United States",
+  "priceRange": "$999+",
+  "knowsAbout": ["AI receptionist", "lead response automation", "appointment reminders", "review automation", "AI business assessment"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How much does an AI business assessment cost?", "acceptedAnswer": { "@type": "Answer", "text": "The Stratum 137 AI Business Assessment is $999 flat. It starts with a 45-minute guided discovery; within 48 hours you receive a readiness score across 7 dimensions, exact tool recommendations at two price tiers, an integration map, and an ROI one-pager." } },
+    { "@type": "Question", "name": "What does the AI Revenue Engine cost and how fast is it live?", "acceptedAnswer": { "@type": "Answer", "text": "Setup starts at $1,500 with service from $500/month, and systems go live within 14 days. It covers a 24/7 AI receptionist, 60-second lead response, dead-lead reactivation, no-show elimination, and automated review requests." } },
+    { "@type": "Question", "name": "What kinds of businesses does Stratum 137 work with?", "acceptedAnswer": { "@type": "Answer", "text": "Service businesses that run on inbound calls, appointments, and follow-up: home services (HVAC, plumbing, electrical, roofing), healthcare and dental practices, law and accounting firms, and home-improvement contractors." } },
+    { "@type": "Question", "name": "Can an AI receptionist really answer my business calls 24/7?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. An AI receptionist trained on your business answers every call instantly — including nights and weekends — qualifies the caller, answers common questions, and books the job straight into your calendar." } },
+    { "@type": "Question", "name": "What happens if the system doesn't deliver results?", "acceptedAnswer": { "@type": "Answer", "text": "Stratum 137 guarantees results: if your AI Revenue Engine doesn't hit the performance targets agreed for the first 60 days, you don't pay for month two." } }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260705a">
+<link rel="stylesheet" href="style.css?v=20260712a">
 </head>
 <body>
 
@@ -21,13 +60,17 @@
       <img src="assets/logo-mark.png" alt="Stratum 137" class="brand-mark">
       <span class="brand-name">STRATUM 137</span>
     </a>
-    <nav class="nav">
+    <nav class="nav" id="nav">
       <a href="#services">Services</a>
       <a href="#how-it-works">How It Works</a>
       <a href="#who">Who It's For</a>
+      <a href="#faq">FAQ</a>
       <a href="#about">About</a>
     </nav>
     <a href="assessment.html" class="btn btn-primary nav-cta">Start Your Assessment</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -35,15 +78,14 @@
 
   <section class="hero">
     <div class="container hero-inner">
-      <img src="assets/logo-mark.png" alt="Stratum 137" class="hero-logo">
-      <div class="hero-wordmark">STRATUM 137</div>
       <div class="eyebrow">AI Implementation for Service Businesses</div>
       <h1>We find where your business is losing revenue.<br><span class="accent">Then we fix it with AI.</span></h1>
       <p class="hero-sub">Stratum 137 helps service businesses recover missed leads, automate follow-up, and scale without hiring — starting with a 45-minute AI assessment.</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+        <a href="assessment.html" class="btn btn-primary">Start Your Assessment</a>
         <a href="#services" class="btn btn-ghost">See How It Works</a>
       </div>
+      <p class="hero-assurance">3-minute intake · results in 48 hours · backed by our 60-day results guarantee</p>
     </div>
     <div class="hero-glow"></div>
   </section>
@@ -343,8 +385,9 @@
             <p class="service-note">Live in 14 days. We handle setup, training, and optimization — and the system reports what it recovered.</p>
             <div class="service-footer">
               <div class="service-price">Setup from $1,500 · from $500/mo</div>
-              <a href="#contact" class="btn btn-primary">See If You Qualify</a>
+              <a href="assessment.html" class="btn btn-primary">See If You Qualify</a>
             </div>
+            <p class="guarantee-echo">Backed by the 60-day results guarantee — targets missed, month two free.</p>
           </div>
         </div>
 
@@ -459,6 +502,37 @@
     </div>
   </section>
 
+  <section class="section faq" id="faq">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">Questions Owners Actually Ask</div>
+        <h2>Straight answers, before you spend a dollar.</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>How much does an AI business assessment cost?</summary>
+          <p>$999 flat. It starts with a 45-minute guided discovery; within 48 hours you're holding a readiness score across 7 dimensions, exact tool recommendations at two price tiers, a visual integration map, and an ROI one-pager. The plan works with any implementer — we just hope it's us.</p>
+        </details>
+        <details>
+          <summary>What does the AI Revenue Engine cost, and how fast is it live?</summary>
+          <p>Setup starts at $1,500 with service from $500/month, live within 14 days. It covers a 24/7 AI receptionist, 60-second lead response, dead-lead reactivation, no-show elimination, and automated review requests — built, deployed, and managed for you.</p>
+        </details>
+        <details>
+          <summary>What kinds of businesses does Stratum 137 work with?</summary>
+          <p>Service businesses that run on inbound calls, appointments, and follow-up: home services (HVAC, plumbing, electrical, roofing), healthcare and dental practices, law and accounting firms, and home-improvement contractors. If you book appointments and chase leads, this fits.</p>
+        </details>
+        <details>
+          <summary>Can an AI receptionist really answer my business calls 24/7?</summary>
+          <p>Yes. An AI receptionist trained on your business answers every call instantly — nights and weekends included — qualifies the caller, answers common questions, and books the job straight into your calendar. You get a transcript of every conversation.</p>
+        </details>
+        <details>
+          <summary>What happens if the system doesn't deliver results?</summary>
+          <p>You don't pay. If your AI Revenue Engine misses the performance targets we agree on in the first 60 days, month two is free. We stand behind the work.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <section class="section contact" id="contact">
     <div class="container contact-inner">
       <h2>Ready to stop leaking revenue?</h2>
@@ -488,5 +562,23 @@
   </div>
 </footer>
 
+<script>
+(function () {
+  var btn = document.querySelector('.nav-toggle');
+  var header = document.querySelector('.site-header');
+  if (!btn || !header) return;
+  btn.addEventListener('click', function () {
+    var open = header.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  document.querySelectorAll('.nav a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      header.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 </body>
 </html>

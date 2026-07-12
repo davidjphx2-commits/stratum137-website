@@ -10,7 +10,7 @@
   --blue-deep: #1e3a5f;
   --text: #e6f1ee;
   --text-dim: #93a3ab;
-  --text-faint: #5d6b73;
+  --text-faint: #7a8a93; /* was #5d6b73 — failed WCAG AA on the dark bg */
   --radius: 14px;
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -54,6 +54,12 @@ h1, h2, h3, h4 {
 }
 
 a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
 
 .accent { color: var(--teal); }
 
@@ -120,8 +126,56 @@ a { color: inherit; text-decoration: none; }
 
 .nav-cta { display: inline-flex; }
 
+/* hamburger — hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--teal);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 @media (max-width: 860px) {
-  .nav { display: none; }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(6, 9, 16, 0.97);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 24px 16px;
+  }
+  .nav a { padding: 13px 4px; font-size: 1rem; border-bottom: 1px solid var(--border); }
+  .nav a:last-child { border-bottom: none; }
+  .nav-open .nav { display: flex; }
+  .nav-toggle { display: flex; }
+  .nav-cta { display: none; }
+}
+@media (max-width: 860px) and (min-width: 480px) {
+  .nav-cta { display: inline-flex; }
 }
 
 /* Buttons */
@@ -209,9 +263,16 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero h1 {
-  font-size: 3.1rem;
-  line-height: 1.18;
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin-bottom: 26px;
+}
+
+.hero-assurance {
+  margin-top: 22px;
+  font-size: 0.88rem;
+  color: var(--text-faint);
 }
 
 .hero-sub {
@@ -324,9 +385,9 @@ a { color: inherit; text-decoration: none; }
 .outcome-copy { padding: 24px 26px 28px; }
 
 .outcome-before {
-  font-size: 0.82rem;
-  color: var(--text-faint);
-  border-left: 2px solid rgba(94, 234, 212, 0.35);
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  border-left: 2px solid rgba(94, 234, 212, 0.55);
   padding-left: 12px;
   margin-bottom: 14px;
 }
@@ -476,6 +537,12 @@ a { color: inherit; text-decoration: none; }
 
 .service-note { font-size: 0.9rem; color: var(--text-faint); }
 
+.guarantee-echo {
+  margin: 14px 0 0 !important;
+  font-size: 0.82rem;
+  color: var(--teal-dim) !important;
+}
+
 .service-footer {
   margin-top: auto;
   padding-top: 24px;
@@ -565,6 +632,52 @@ a { color: inherit; text-decoration: none; }
 .guarantee-inner { max-width: 680px; text-align: center; margin: 0 auto; }
 .guarantee-inner h2 { font-size: 1.9rem; margin-bottom: 16px; }
 .guarantee-inner p { color: var(--text-dim); }
+
+/* FAQ */
+.faq-list { max-width: 760px; margin: 0 auto; }
+
+.faq-list details {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-list details[open] { border-color: var(--border-strong); }
+
+.faq-list summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 22px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  color: var(--text);
+  position: relative;
+  padding-right: 48px;
+}
+
+.faq-list summary::-webkit-details-marker { display: none; }
+
+.faq-list summary::after {
+  content: '+';
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--teal);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.faq-list details[open] summary::after { content: '–'; }
+
+.faq-list details p {
+  padding: 0 22px 20px;
+  color: var(--text-dim);
+  font-size: 0.97rem;
+}
 
 /* Contact */
 .contact { text-align: center; }
