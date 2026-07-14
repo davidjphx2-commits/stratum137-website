@@ -622,6 +622,40 @@ a { color: inherit; text-decoration: none; }
   .who-grid { grid-template-columns: 1fr; }
 }
 
+/* Proof / trust band */
+.proof { background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.proof-pillar {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 22px;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.proof-pillar:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+
+.proof-check { width: 34px; height: 34px; margin-bottom: 16px; display: block; }
+.proof-pillar h3 { font-size: 1.08rem; margin-bottom: 10px; color: var(--teal); }
+.proof-pillar p { color: var(--text-dim); font-size: 0.93rem; line-height: 1.55; }
+
+.proof-founder {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  margin: 36px auto 0;
+  max-width: 620px;
+}
+.proof-founder strong { color: var(--text); }
+
+@media (max-width: 860px) { .proof-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .proof-grid { grid-template-columns: 1fr; } }
+
 /* Guarantee */
 .guarantee {
   background: var(--bg-elevated);
