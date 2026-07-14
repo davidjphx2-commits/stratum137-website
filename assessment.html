@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260713a">
+<link rel="stylesheet" href="style.css?v=20260713b">
 <!--
   FORM ENDPOINT — two modes:
   1. TODAY (interim): FormSubmit relays each submission to david@stratum137.com.
@@ -70,76 +70,126 @@
         <form id="intake" action="https://mc.stratum137.com/api/leads/intake?token=83da63ef9391736c9ded936c2bb53847" method="POST" class="intake-form">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-          <div class="field-grid">
-            <label>Business name *
-              <input type="text" name="business" required placeholder="Acme Salon">
-            </label>
-            <label>Your name *
-              <input type="text" name="name" required placeholder="Jo Smith">
-            </label>
-            <label>Email *
-              <input type="email" name="email" required placeholder="you@business.com">
-            </label>
-            <label>Phone
-              <input type="tel" name="phone" placeholder="(602) 555-0100">
-            </label>
-            <label>Website
-              <input type="text" name="website" placeholder="acmesalon.com">
-            </label>
-            <label>What kind of business?
-              <select name="vertical">
-                <option value="">Choose one…</option>
-                <option>Therapy / counseling practice</option>
-                <option>Salon / beauty / wellness</option>
-                <option>Credit repair / business funding</option>
-                <option>E-commerce / apparel</option>
-                <option>Home services</option>
-                <option>Other service business</option>
-              </select>
-            </label>
-            <label>Team size
-              <select name="teamSize">
-                <option value="">Choose one…</option>
-                <option>Just me</option>
-                <option>2–5</option>
-                <option>6–15</option>
-                <option>16–50</option>
-                <option>50+</option>
-              </select>
-            </label>
-            <label>Monthly revenue (rough)
-              <select name="revenue">
-                <option value="">Prefer not to say</option>
-                <option>Under $10k</option>
-                <option>$10k–$30k</option>
-                <option>$30k–$80k</option>
-                <option>$80k–$200k</option>
-                <option>$200k+</option>
-              </select>
-            </label>
+          <div class="form-section">
+            <div class="form-legend">Who you are</div>
+            <div class="field-grid">
+              <label>Business name *
+                <input type="text" name="business" required placeholder="Acme Salon">
+              </label>
+              <label>Your name *
+                <input type="text" name="name" required placeholder="Jo Smith">
+              </label>
+              <label>Email *
+                <input type="email" name="email" required placeholder="you@business.com">
+              </label>
+              <label>Phone
+                <input type="tel" name="phone" placeholder="(602) 555-0100">
+              </label>
+            </div>
           </div>
 
-          <fieldset class="pain-set">
-            <legend>Where do you feel the leaks? (check all that apply)</legend>
-            <div class="pain-grid">
-              <label><input type="checkbox" name="pains" value="missed calls"> Missed calls</label>
-              <label><input type="checkbox" name="pains" value="slow follow-up"> Slow lead follow-up</label>
-              <label><input type="checkbox" name="pains" value="no-shows"> No-shows</label>
-              <label><input type="checkbox" name="pains" value="reviews"> Not enough reviews</label>
-              <label><input type="checkbox" name="pains" value="manual admin"> Manual admin / bookkeeping</label>
-              <label><input type="checkbox" name="pains" value="marketing content"> Marketing content</label>
-              <label><input type="checkbox" name="pains" value="scheduling"> Scheduling chaos</label>
-              <label><input type="checkbox" name="pains" value="other"> Something else</label>
+          <div class="form-section">
+            <div class="form-legend">Your business</div>
+            <div class="field-grid">
+              <label>Website
+                <input type="text" name="website" placeholder="acmesalon.com">
+              </label>
+              <label>What kind of business?
+                <select name="vertical" id="vertical">
+                  <option value="">Choose one…</option>
+                  <optgroup label="Home Services">
+                    <option>HVAC / Plumbing / Electrical</option>
+                    <option>Roofing / Solar</option>
+                    <option>Landscaping / Lawn / Pest control</option>
+                    <option>Cleaning / Maid service</option>
+                    <option>Handyman / Garage / Fencing</option>
+                  </optgroup>
+                  <optgroup label="Home Improvement">
+                    <option>Remodeling / General contractor</option>
+                    <option>Flooring / Painting / Drywall</option>
+                    <option>Windows / Doors / Kitchen &amp; bath</option>
+                  </optgroup>
+                  <optgroup label="Health &amp; Wellness">
+                    <option>Dental practice</option>
+                    <option>Medical / Chiropractic / PT</option>
+                    <option>Therapy / Counseling / Mental health</option>
+                    <option>Salon / Spa / Beauty</option>
+                    <option>Med spa / Aesthetics</option>
+                    <option>Fitness / Gym / Personal training</option>
+                  </optgroup>
+                  <optgroup label="Professional Services">
+                    <option>Law firm</option>
+                    <option>Accounting / Bookkeeping / Tax</option>
+                    <option>Real estate / Mortgage</option>
+                    <option>Insurance agency</option>
+                    <option>Consulting / Coaching</option>
+                  </optgroup>
+                  <optgroup label="Other Common">
+                    <option>Auto repair / Detailing</option>
+                    <option>Restaurant / Catering / Food</option>
+                    <option>Pet services / Grooming / Vet</option>
+                    <option>Credit repair / Business funding</option>
+                    <option>E-commerce / Retail / Apparel</option>
+                    <option>Events / Photography</option>
+                  </optgroup>
+                  <option value="__other__">Other — not listed (tell us)</option>
+                </select>
+              </label>
+              <label class="reveal" id="verticalOtherWrap" hidden>What kind, exactly?
+                <input type="text" name="verticalOther" id="verticalOther" placeholder="Tell us your line of work — we likely still serve it">
+              </label>
+              <label>Team size
+                <select name="teamSize">
+                  <option value="">Choose one…</option>
+                  <option>Just me</option>
+                  <option>2–5</option>
+                  <option>6–15</option>
+                  <option>16–50</option>
+                  <option>50+</option>
+                </select>
+              </label>
+              <label>Monthly revenue (rough)
+                <select name="revenue">
+                  <option value="">Prefer not to say</option>
+                  <option>Under $10k</option>
+                  <option>$10k–$30k</option>
+                  <option>$30k–$80k</option>
+                  <option>$80k–$200k</option>
+                  <option>$200k+</option>
+                </select>
+              </label>
             </div>
-          </fieldset>
+          </div>
 
-          <label class="full">What tools do you run on today?
-            <input type="text" name="tools" placeholder="e.g. QuickBooks, Calendly, Instagram, spreadsheets…">
-          </label>
+          <div class="form-section">
+            <div class="form-legend">Where it hurts <span class="form-hint">— check all that apply</span></div>
+            <fieldset class="pain-set">
+              <legend class="sr-legend">Where do you feel the leaks? (check all that apply)</legend>
+              <div class="pain-grid">
+                <label><input type="checkbox" name="pains" value="missed calls"> Missed calls</label>
+                <label><input type="checkbox" name="pains" value="slow follow-up"> Slow lead follow-up</label>
+                <label><input type="checkbox" name="pains" value="no-shows"> No-shows</label>
+                <label><input type="checkbox" name="pains" value="reviews"> Not enough reviews</label>
+                <label><input type="checkbox" name="pains" value="manual admin"> Manual admin / bookkeeping</label>
+                <label><input type="checkbox" name="pains" value="marketing content"> Marketing content</label>
+                <label><input type="checkbox" name="pains" value="scheduling"> Scheduling chaos</label>
+                <label><input type="checkbox" name="pains" value="other" id="painOther"> Something else</label>
+              </div>
+              <label class="reveal full" id="painOtherWrap" hidden>What's the something else?
+                <input type="text" name="painOtherText" placeholder="Describe the leak in your own words">
+              </label>
+            </fieldset>
+          </div>
 
-          <label class="full">Anything else we should know?
-            <textarea name="notes" rows="4" placeholder="Biggest headache, goals, timeline…"></textarea>
-          </label>
+          <div class="form-section">
+            <div class="form-legend">A little context</div>
+            <label class="full">What tools do you run on today?
+              <input type="text" name="tools" placeholder="e.g. QuickBooks, Calendly, Instagram, spreadsheets…">
+            </label>
+            <label class="full">Anything else we should know?
+              <textarea name="notes" rows="4" placeholder="Biggest headache, goals, timeline…"></textarea>
+            </label>
+          </div>
 
           <button type="submit" class="btn btn-primary btn-lg">Send it — get my assessment started</button>
           <p class="intake-fineprint">We reply within one business day. Your answers stay between us — no lists, no spam.</p>
@@ -169,6 +219,28 @@
     document.getElementById("formwrap").hidden = true;
     document.getElementById("thanks").hidden = false;
   }
+
+  // Wildcard reveals — show a text box when "Other" is chosen.
+  (function () {
+    var vsel = document.getElementById("vertical");
+    var vwrap = document.getElementById("verticalOtherWrap");
+    var vinput = document.getElementById("verticalOther");
+    if (vsel && vwrap) {
+      vsel.addEventListener("change", function () {
+        var other = vsel.value === "__other__";
+        vwrap.hidden = !other;
+        if (vinput) { vinput.required = other; if (other) vinput.focus(); }
+      });
+    }
+    var pchk = document.getElementById("painOther");
+    var pwrap = document.getElementById("painOtherWrap");
+    if (pchk && pwrap) {
+      pchk.addEventListener("change", function () {
+        pwrap.hidden = !pchk.checked;
+        if (pchk.checked) { var i = pwrap.querySelector("input"); if (i) i.focus(); }
+      });
+    }
+  })();
 
   // Submit straight to Mission Control's intake API (returns JSON, so we
   // handle the redirect ourselves) and join the pain checkboxes into one field.
