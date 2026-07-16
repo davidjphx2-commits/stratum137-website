@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Office — Your Business, Running Itself | Stratum 137</title>
+<meta name="description" content="The Stratum 137 AI Office: 10 working automations installed on your own AI desktop in one day — email triage, morning briefings, follow-up tracking, meeting prep, and more. You keep every draft-approval.">
+<link rel="canonical" href="https://stratum137.com/ai-office.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stratum137.com/ai-office.html">
+<meta property="og:title" content="The AI Office — 10 Automations, Installed in a Day | Stratum 137">
+<meta property="og:description" content="A chief of staff that never sleeps: inbox triaged, briefings ready, follow-ups tracked, documents drafted — on your own AI desktop, everything staged for your approval.">
+<meta property="og:image" content="https://stratum137.com/assets/logo.png">
+<meta property="og:site_name" content="Stratum 137">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The AI Office — 10 Automations, Installed in a Day">
+<meta name="twitter:description" content="Your inbox triaged, your day briefed, your follow-ups tracked. Installed on your own AI desktop by Stratum 137.">
+<meta name="twitter:image" content="https://stratum137.com/assets/logo.png">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "The AI Office",
+  "provider": { "@type": "ProfessionalService", "name": "Stratum 137", "url": "https://stratum137.com/" },
+  "serviceType": "AI office setup and automation for small businesses",
+  "description": "One-day installation of a complete AI office on the client's own computer and accounts: email triage, drafted replies, morning briefings, meeting prep, calendar hygiene, document drafting, spreadsheet help, follow-up tracking, notes-to-actions, and weekly reviews — plus a persistent second-brain knowledge vault. Every outbound item is staged for the owner's approval.",
+  "areaServed": "United States"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20260716">
+<style>
+/* ===== AI Office page-scoped styles (ao-*) ===== */
+.ao-hero { padding: 150px 0 80px; text-align: center; position: relative; }
+.ao-hero h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; font-family: var(--font-display); }
+.ao-hero .lead { margin: 22px auto 0; }
+.ao-strip { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 30px auto 0; max-width: 760px; }
+.ao-chip {
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em;
+  padding: 7px 14px; border-radius: 999px;
+  border: 1px solid var(--border); color: var(--text-dim);
+  background: rgba(14, 20, 32, 0.7);
+}
+.ao-chip strong { color: var(--teal); font-weight: 600; }
+
+/* automation rows */
+.ao-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+  padding: 44px 0; border-top: 1px solid var(--border);
+}
+.ao-row:first-of-type { border-top: none; }
+.ao-row.flip .ao-demo { order: 2; }
+@media (max-width: 860px) {
+  .ao-row { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
+  .ao-row.flip .ao-demo { order: 0; }
+}
+.ao-num {
+  font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+  color: var(--teal-dim); letter-spacing: 0.14em; margin-bottom: 10px;
+}
+.ao-copy h3 { font-family: var(--font-display); font-size: 1.45rem; line-height: 1.3; margin-bottom: 12px; }
+.ao-before { font-size: 0.88rem; color: var(--text-faint); margin-bottom: 10px; }
+.ao-before b { color: #f0b8b0; font-weight: 600; }
+.ao-copy p { color: var(--text-dim); font-size: 0.98rem; }
+
+/* the demo windows */
+.ao-demo { position: relative; }
+.ao-window {
+  background: var(--bg-card); border: 1px solid var(--border-strong);
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45), 0 0 34px rgba(45, 212, 191, 0.07);
+  opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.ao-window.on { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .ao-window { opacity: 1; transform: none; transition: none; } }
+.ao-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+.ao-dots { display: flex; gap: 5px; }
+.ao-dots span { width: 9px; height: 9px; border-radius: 50%; background: rgba(147, 163, 171, 0.35); }
+.ao-bar-title { font-size: 0.76rem; color: var(--text-faint); letter-spacing: 0.06em; font-weight: 500; }
+.ao-body { padding: 16px 18px; display: flex; flex-direction: column; gap: 9px; font-size: 0.85rem; }
+
+.ao-item { display: flex; align-items: baseline; gap: 10px; padding: 8px 10px; border-radius: 8px; background: rgba(255,255,255,0.025); }
+.ao-item .who { color: var(--text); font-weight: 600; white-space: nowrap; }
+.ao-item .what { color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ao-tag {
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 999px; white-space: nowrap;
+}
+.ao-tag.deal { background: rgba(45,212,191,0.14); color: var(--teal); }
+.ao-tag.money { background: rgba(251,191,36,0.14); color: #fbbf24; }
+.ao-tag.wait { background: rgba(240,113,103,0.14); color: #f0928a; }
+.ao-tag.ok { background: rgba(147,163,171,0.14); color: var(--text-dim); }
+
+.ao-msg { padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.03); color: var(--text-dim); }
+.ao-msg.ai { border-left: 2px solid var(--teal-dim); background: rgba(45,212,191,0.06); color: var(--text); }
+.ao-msg .from { display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 4px; }
+.ao-msg ul { margin: 4px 0 0 18px; }
+.ao-msg li { margin: 2px 0; }
+
+.ao-draftbar {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 9px 12px; border-radius: 9px; border: 1px dashed var(--border-strong);
+  color: var(--text-dim); font-size: 0.78rem;
+}
+.ao-draftbar .ao-sendbtn {
+  font-size: 0.74rem; font-weight: 600; color: #04211d; background: var(--teal-dim);
+  padding: 5px 12px; border-radius: 999px; white-space: nowrap;
+}
+
+.ao-cal { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.ao-cal .day { font-size: 0.66rem; color: var(--text-faint); text-align: center; letter-spacing: 0.08em; }
+.ao-cal .slot { height: 26px; border-radius: 6px; background: rgba(255,255,255,0.035); }
+.ao-cal .slot.busy { background: rgba(45,212,191,0.2); border: 1px solid rgba(45,212,191,0.35); }
+.ao-cal .slot.warn { background: rgba(240,113,103,0.16); border: 1px solid rgba(240,113,103,0.4); }
+.ao-cal-note { font-size: 0.78rem; color: var(--text-dim); margin-top: 4px; }
+.ao-cal-note b { color: var(--teal); }
+
+.ao-sheet { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.74rem; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.ao-sheet .r { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; }
+.ao-sheet .c { padding: 6px 9px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); color: var(--text-dim); white-space: nowrap; overflow: hidden; }
+.ao-sheet .r.h .c { background: var(--bg-elevated); color: var(--text-faint); font-size: 0.64rem; letter-spacing: 0.1em; }
+.ao-sheet .c.fix { color: var(--teal); }
+
+.ao-check { display: flex; gap: 9px; align-items: baseline; color: var(--text-dim); }
+.ao-check::before { content: "✓"; color: var(--teal); font-weight: 700; }
+.ao-check.open::before { content: "○"; color: var(--text-faint); }
+
+/* tiers */
+.ao-tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 46px; }
+@media (max-width: 860px) { .ao-tiers { grid-template-columns: 1fr; } }
+.ao-tier {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 32px 30px;
+}
+.ao-tier.hot { border-color: var(--border-strong); box-shadow: 0 0 40px rgba(45, 212, 191, 0.08); }
+.ao-tier h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 4px; }
+.ao-tier .sub { color: var(--text-dim); font-size: 0.92rem; margin-bottom: 18px; }
+.ao-tier ul { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 22px; }
+.ao-tier li { padding-left: 24px; position: relative; color: var(--text-dim); font-size: 0.95rem; }
+.ao-tier li::before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+.ao-guard {
+  margin-top: 56px; text-align: center; padding: 26px 30px;
+  border: 1px solid var(--border); border-radius: var(--radius); background: rgba(45,212,191,0.04);
+}
+.ao-guard p { color: var(--text-dim); max-width: 640px; margin: 6px auto 0; }
+.ao-guard h3 { font-family: var(--font-display); }
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-mark.png" alt="Stratum 137" class="brand-mark">
+      <span class="brand-name">STRATUM 137</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#automations">The 10 Automations</a>
+      <a href="#tiers">Packages</a>
+      <a href="#install-day">Install Day</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <a href="mailto:david@stratum137.com?subject=AI%20Office" class="btn btn-primary nav-cta">Get Your AI Office</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="ao-hero">
+    <div class="container">
+      <div class="eyebrow">The AI Office</div>
+      <h1>A chief of staff that never sleeps.<br><span class="accent">Installed on your computer in one day.</span></h1>
+      <p class="lead center">Ten working automations on your own AI desktop — inbox triaged, day briefed, follow-ups tracked, documents drafted — plus a knowledge vault that remembers everything about your business. You approve every word before it leaves.</p>
+      <div class="hero-actions" style="margin-top:32px; justify-content:center; display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="mailto:david@stratum137.com?subject=AI%20Office" class="btn btn-primary">Get Your AI Office</a>
+        <a href="#automations" class="btn btn-ghost">See the 10 Automations</a>
+      </div>
+      <div class="ao-strip" aria-hidden="true">
+        <span class="ao-chip"><strong>1 day</strong> to install</span>
+        <span class="ao-chip"><strong>Your</strong> computer, your accounts</span>
+        <span class="ao-chip"><strong>10</strong> automations working day one</span>
+        <span class="ao-chip"><strong>You approve</strong> everything outbound</span>
+      </div>
+    </div>
+    <div class="hero-glow"></div>
+  </section>
+
+  <section class="section" id="automations" style="padding-top:40px">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">What You're Actually Getting</div>
+        <h2>Ten jobs off your plate. Here's each one, working.</h2>
+        <p class="lead center" style="margin-top:14px">Not features on a list — these are the windows you'll actually see on your screen every day.</p>
+      </div>
+
+      <!-- 1 Email triage -->
+      <div class="ao-row">
+        <div class="ao-demo">
+          <div class="ao-window" role="img" aria-label="Example: inbox triaged into priorities">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">MORNING INBOX SCAN — 7:02 AM</span></div>
+            <div class="ao-body">
+              <div class="ao-item"><span class="ao-tag deal">act today</span><span class="who">M. Torres</span><span class="what">ready to move forward — wants a call before Friday</span></div>
+              <div class="ao-item"><span class="ao-tag money">money</span><span class="who">Invoice #241</span><span class="what">paid confirmation received — needs filing</span></div>
+              <div class="ao-item"><span class="ao-tag wait">stuck 4 days</span><span class="who">K. Whitfield</span><span class="what">still owes signed agreement — nudge drafted</span></div>
+              <div class="ao-item"><span class="ao-tag ok">noise ×14</span><span class="who">Newsletters</span><span class="what">archived, nothing needs you</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ao-copy">
+          <div class="ao-num">AUTOMATION 01</div>
+          <div class="ao-before">Before: <b>40 minutes every morning</b> wading through email to find the three that matter.</div>
+          <h3>Your inbox, already sorted when you sit down.</h3>
+          <p>Every morning your AI scans the last 24 hours and hands you the short version: what needs action today, what's about money, what's gone quiet, what's noise. You read four lines instead of forty emails.</p>
+        </div>
+      </div>
+
+      <!-- 2 Draft replies -->
+      <div class="ao-row flip">
+        <div class="ao-demo">
+          <div class="ao-window" role="img" aria-label="Example: reply drafted and staged for approval">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">DRAFT — RE: MOVING FORWARD</span></div>
+            <div class="ao-body">
+              <div class="ao-msg ai"><span class="from">drafted in your voice</span>Maria — great news. Friday works: I have 10:30 or 2:00 open. I'll bring the updated numbers we discussed so we can finalize on the call. Which time suits you?</div>
+              <div class="ao-draftbar">Staged in Drafts — nothing sends without you <span class="ao-sendbtn">You hit send</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ao-copy">
+          <div class="ao-num">AUTOMATION 02</div>
+          <div class="ao-before">Before: routine replies eat <b>an hour a day</b> — or sit unanswered until they cost you the deal.</div>
+          <h3>Replies written in your voice, waiting in Drafts.</h3>
+          <p>Routine email gets answered the way you would answer it — same tone, same warmth, your phrasing. It lands in your Drafts folder, you read it, you hit send. The hour comes back; the voice stays yours.</p>
+        </div>
+      </div>
+
+      <!-- 3 Morning briefing -->
+      <div class="ao-row">
+        <div class="ao-demo">
+          <div class="ao-window" role="img" aria-label="Example: morning briefing summary">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">YOUR DAY — THURSDAY</span></div>
+            <div class="ao-body">
+              <div class="ao-msg ai"><span class="from">morning brief</span>
+                <ul>
+                  <li><b>10:30</b> — Torres call. Prep note ready below.</li>
+                  <li><b>Top 3:</b> countersign Whitfield · Torres numbers · chase title docs</li>
+                  <li><b>Gone quiet:</b> Hendricks (5 days) — nudge staged</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ao-copy">
+          <div class="ao-num">AUTOMATION 03</div>
+          <div class="ao-before">Before: the day starts by <b>reacting to whatever's loudest</b> — the important thing surfaces at 4 PM.</div>
+          <h3>Coffee, and your whole day on one card.</h3>
+          <p>Calendar, top priorities pulled from your open deals, and anything that's gone quiet too long — under 200 words, ready before you are. You start the day already ahead of it.</p>
+        </div>
+      </div>
+
+      <!-- 4 Meeting prep -->
+      <div class="ao-row flip">
+        <div class="ao-demo">
+          <div class="ao-window" role="img" aria-label="Example: one-page meeting prep">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">PREP — TORRES, 10:30</span></div>
+            <div class="ao-body">
+              <div class="ao-check">Last contact: Jun 30 — asked about timing &amp; fees</div>
+              <div class="ao-check">Open item: revised numbers you promised</div>
+              <div class="ao-check">Their situation: relocating in fall — timeline pressure</div>
+              <div class="ao-check open">Walk out with: verbal yes + signing date on calendar</div>
+            </div>
+          </div>
+        </div>
+        <div class="ao-copy">
+          <div class="ao-num">AUTOMATION 04</div>
+          <div class="ao-before">Before: walking into meetings <b>rebuilding context from memory</b> in the parking lot.</div>
+          <h3>Walk into every meeting already briefed.</h3>
+          <p>Before each appointment: who they are, your last contact, what's open between you, and what you should walk out with. One page, thirty seconds to read, and you sound like the most prepared person they've met all month.</p>
+        </div>
+      </div>
+
+      <!-- 5 Calendar hygiene -->
+      <div class="ao-row">
+        <div class="ao-demo">
+          <div class="ao-window" role="img" aria-label="Example: calendar conflict caught">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">WEEK CHECK</span></div>
+            <div class="ao-body">
+              <div class="ao-cal">
+                <div class="day">MON</div><div class="day">TUE</div><div class="day">WED</div><div class="day">THU</div><div class="day">FRI</div>
+                <div class="slot busy"></div><div class="slot"></div><div class="slot warn"></div><div class="slot busy"></div><div class="slot"></div>
+                <div class="slot"></div><div class="slot busy"></div><div class="slot warn"></div><div class="slot"></div><div class="slot busy"></div>
+              </div>
+              <p class="ao-cal-note"><b>Caught:</b> Wednesday double-booking — suggested moving the 2 PM to Friday's open slot. Two deals have no next step scheduled.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ao-copy">
+          <div class="ao-num">AUTOMATION 05</div>
+          <div class="ao-before">Before: conflicts discovered <b>when both parties show up</b>, and deals stall because no next step got booked.</div>
+          <h3>A calendar that checks itself.</h3>
+          <p>Double-bookings caught before they happen, missing travel gaps flagged, and — the quiet killer — any active deal with no scheduled next step gets surfaced. It suggests; you decide. Nothing moves without your OK.</p>
+        </div>
+      </div>
+
+      <!-- 6 Document drafting -->
+      <div class="ao-row flip">
+        <div class="ao-demo">
+          <div class="ao-window" role="img" aria-label="Example: proposal drafted from one sentence">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">DRAFT — PROPOSAL.DOCX</span></div>
+            <div class="ao-body">
+              <div class="ao-msg"><span class="from">you typed</span>"Draft the Hendricks proposal — standard terms, the timeline we discussed Tuesday"</div>
+              <div class="ao-msg ai"><span class="from">90 seconds later</span>One-page proposal drafted: scope, your standard terms, Tuesday's timeline, their numbers pulled from the deal notes. Filed to the vault, ready for your review.</div>
+            </div>
+          </div>
+        </div>
+        <div class="ao-copy">
+          <div class="ao-num">AUTOMATION 06</div>
+          <div class="ao-before">Before: proposals and letters written <b>from scratch at 9 PM</b>, each one a small dread.</div>
+          <h3>One sentence in. A finished document out.</h3>
+          <p>Proposals, letters, agreements, SOPs — drafted in your voice from a single instruction, pulling real details from your own deal notes. You edit and approve instead of staring at a blank page.</p>
+        </div>
+      </div>
+
+      <!-- 7 Spreadsheet helper -->
+      <div class="ao-row">
+        <div class="ao-demo">
+          <div class="ao-window" role="img" aria-label="Example: spreadsheet formula fixed with shown work">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">COMMISSIONS.XLSX</span></div>
+            <div class="ao-body">
+              <div class="ao-sheet">
+                <div class="r h"><div class="c">DEAL</div><div class="c">GROSS</div><div class="c">SPLIT</div><div class="c">NET</div></div>
+                <div class="r"><div class="c">Torres</div><div class="c">$8,400</div><div class="c">60/40</div><div class="c fix">$5,040 ✓</div></div>
+                <div class="r"><div class="c">Whitfield</div><div class="c">$6,150</div><div class="c">50/50</div><div class="c fix">$3,075 ✓</div></div>
+              </div>
+              <p class="ao-cal-note"><b>Shown work:</b> Torres = 8,400 × 0.60 — row 14's formula referenced the wrong column; fixed and flagged.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ao-copy">
+          <div class="ao-num">AUTOMATION 07</div>
+          <div class="ao-before">Before: <b>one wrong cell reference</b> quietly miscalculating money for months.</div>
+          <h3>Spreadsheets that show their work.</h3>
+          <p>Formulas fixed, numbers analyzed, sheets cleaned up — and every money calculation shows its inputs and its math, not just an answer. You see exactly why every number is what it is.</p>
+        </div>
+      </div>
+
+      <!-- 8 Follow-up tracker -->
+      <div class="ao-row flip">
+        <div class="ao-demo">
+          <div class="ao-window" role="img" aria-label="Example: open loops tracked with nudges drafted">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">WHO OWES YOU WHAT</span></div>
+            <div class="ao-body">
+              <div class="ao-item"><span class="ao-tag wait">6 days</span><span class="who">Hendricks</span><span class="what">signed agreement — 2 nudges sent, 3rd drafted</span></div>
+              <div class="ao-item"><span class="ao-tag wait">4 days</span><span class="who">Title co.</span><span class="what">closing docs — polite chase staged</span></div>
+              <div class="ao-item"><span class="ao-tag deal">on track</span><span class="who">Torres</span><span class="what">numbers sent, call booked Friday</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ao-copy">
+          <div class="ao-num">AUTOMATION 08</div>
+          <div class="ao-before">Before: deals die not from a "no" — from a follow-up that <b>never happened</b>.</div>
+          <h3>Nothing falls through the cracks. Ever.</h3>
+          <p>Every open loop — who owes you a document, a signature, an answer, money — tracked with how long it's been outstanding. Anything past three days gets a nudge drafted and staged. You just approve the sends.</p>
+        </div>
+      </div>
+
+      <!-- 9 Notes to actions -->
+      <div class="ao-row">
+        <div class="ao-demo">
+          <div class="ao-window" role="img" aria-label="Example: meeting notes turned into filed summary and action list">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">AFTER THE CALL</span></div>
+            <div class="ao-body">
+              <div class="ao-msg"><span class="from">you dropped in</span>Voice memo from the truck — 4 minutes, Torres call recap</div>
+              <div class="ao-check">Summary filed to your knowledge vault</div>
+              <div class="ao-check">Your actions: revised numbers by Thu · loop in title co.</div>
+              <div class="ao-check">Their actions: confirm signing date · send HOA docs</div>
+            </div>
+          </div>
+        </div>
+        <div class="ao-copy">
+          <div class="ao-num">AUTOMATION 09</div>
+          <div class="ao-before">Before: the details live <b>in your head until they don't</b> — three deals later, gone.</div>
+          <h3>Talk for four minutes. Get a filed record and a to-do list.</h3>
+          <p>Meeting notes, call recaps, voice memos — turned into a clean summary filed where you can find it forever, plus action lists split into yours and theirs. Your business stops depending on your memory.</p>
+        </div>
+      </div>
+
+      <!-- 10 Weekly review -->
+      <div class="ao-row flip">
+        <div class="ao-demo">
+          <div class="ao-window" role="img" aria-label="Example: Friday weekly review">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">FRIDAY ROUNDUP</span></div>
+            <div class="ao-body">
+              <div class="ao-msg ai"><span class="from">the week, honestly</span>
+                <ul>
+                  <li><b>Moved:</b> Torres → contract · 2 new inquiries</li>
+                  <li><b>Stuck:</b> Hendricks signature — 6 days</li>
+                  <li><b>Money:</b> $3,075 in · $5,040 expected at close</li>
+                  <li><b>Next week's top 3</b> — already on Monday's brief</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ao-copy">
+          <div class="ao-num">AUTOMATION 10</div>
+          <div class="ao-before">Before: weeks <b>blur together</b> — what moved, what stalled, where the money is? Nobody quite knows.</div>
+          <h3>Every Friday: the week, in black and white.</h3>
+          <p>Deals moved, deals stuck, money in and money expected, what fell through the cracks — filed to your vault and ending with next week's top three. Fifty-two of these and you have something most small businesses never get: a searchable history of the business itself.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="tiers" style="background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">Two Ways To Get It</div>
+        <h2>Installed in a day. Yours from day one.</h2>
+      </div>
+      <div class="ao-tiers">
+        <div class="ao-tier">
+          <h3>The AI Office</h3>
+          <p class="sub">The complete setup — installed, configured, and taught to you in one working day.</p>
+          <ul>
+            <li>All 10 automations, live on your machine day one</li>
+            <li>Your own AI desktop on your accounts — you own everything</li>
+            <li>A second brain: a knowledge vault that remembers every client, deal, and decision</li>
+            <li>Your voice, your guardrails: nothing sends without your approval</li>
+            <li>Plain-English operator's manual + the daily ritual, taught in person</li>
+          </ul>
+          <a href="mailto:david@stratum137.com?subject=AI%20Office%20Setup" class="btn btn-outline">Ask About Founding Pricing</a>
+        </div>
+        <div class="ao-tier hot">
+          <h3>The AI Office — Coach</h3>
+          <p class="sub">Everything in the AI Office, plus a standing coach who keeps it sharp as your business grows.</p>
+          <ul>
+            <li>Brand kit loaded — every document and image comes out on-brand</li>
+            <li>Scheduled intelligence reports: competitors and your market, delivered without lifting a finger</li>
+            <li>Monthly training — one new capability at a time</li>
+            <li>Tune-ups as AI models improve (they change fast; your setup keeps up)</li>
+            <li>Quarterly review: what's working, hours saved, what to automate next</li>
+          </ul>
+          <a href="mailto:david@stratum137.com?subject=AI%20Office%20Coach" class="btn btn-primary">Talk To Us About Coach</a>
+        </div>
+      </div>
+      <div class="ao-guard">
+        <h3>The standing rule under all of it</h3>
+        <p>The AI drafts; <strong>you</strong> send. Every email, every document, every calendar change is staged for your approval. Nothing speaks for your business without your say-so — that's written into the system itself, not a promise.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="install-day">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">Install Day</div>
+        <h2>One day. Here's how it goes.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Your accounts, your machine</h3>
+          <p>We set up your AI desktop on your own computer and subscriptions. You own every piece — no dependency on us to keep running.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>The interview</h3>
+          <p>Your AI interviews you — your business, your clients, how you write, what eats your week. That's what makes it yours instead of generic.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Automations live</h3>
+          <p>We run the morning triage, the briefing, and the follow-up tracker with you on your real inbox and calendar — working before we leave.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3>The ritual</h3>
+          <p>Morning: read the brief, approve the drafts. Friday: read the roundup. That's the whole discipline — the system does the rest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact">
+    <div class="container contact-inner">
+      <h2>Your office could run like this by next week.</h2>
+      <p>Founding pricing for the first businesses on board. Tell us what your week looks like — we'll tell you honestly which of the ten will pay for the whole thing.</p>
+      <a href="mailto:david@stratum137.com?subject=AI%20Office" class="btn btn-primary btn-lg">Get Your AI Office</a>
+      <p style="margin-top:14px"><a href="index.html#services" class="btn btn-ghost">or start with the $999 assessment</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo-mark.png" alt="Stratum 137" class="footer-mark">
+      <span>STRATUM 137</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#services">Assessment</a>
+      <a href="index.html#services">AI Revenue Engine</a>
+      <a href="ai-office.html">The AI Office</a>
+      <a href="mailto:david@stratum137.com">david@stratum137.com</a>
+    </div>
+  </div>
+  <div class="container footer-note">
+    137 — the number that holds the universe together at its smallest scale. We work at the layer where AI meets your business.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.querySelector('.nav-toggle');
+  var header = document.querySelector('.site-header');
+  if (btn && header) {
+    btn.addEventListener('click', function () {
+      var open = header.classList.toggle('nav-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.querySelectorAll('.nav a').forEach(function (a) {
+      a.addEventListener('click', function () { header.classList.remove('nav-open'); });
+    });
+  }
+  var wins = document.querySelectorAll('.ao-window');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+    }, { threshold: 0.25 });
+    wins.forEach(function (w) { io.observe(w); });
+  } else {
+    wins.forEach(function (w) { w.classList.add('on'); });
+  }
+})();
+</script>
+</body>
+</html>
