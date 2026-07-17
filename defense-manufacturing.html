@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Defense-Supply Manufacturers — CMMC-Aware Adoption | Stratum 137</title>
+<meta name="description" content="Arizona machine shops and defense-supply manufacturers: adopt AI without jeopardizing CUI handling or your SPRS standing. CMMC-aware AI readiness assessment, front-office automation outside the CUI boundary, and defense-supply intelligence briefings.">
+<link rel="canonical" href="https://stratum137.com/defense-manufacturing.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://stratum137.com/defense-manufacturing.html">
+<meta property="og:title" content="AI for Defense-Supply Manufacturers — Without Touching Your CUI">
+<meta property="og:description" content="CMMC Phase II is suspended for small contractors — but the primes are still auditing. We answer the question nobody else will: which AI tools can legally operate in your shop, and where.">
+<meta property="og:image" content="https://stratum137.com/assets/logo.png">
+<meta property="og:site_name" content="Stratum 137">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI for Defense-Supply Manufacturers — CMMC-Aware Adoption">
+<meta name="twitter:description" content="Adopt AI in the front office without jeopardizing CUI handling or SPRS standing. Arizona's defense corridor, served locally.">
+<meta name="twitter:image" content="https://stratum137.com/assets/logo.png">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "CMMC-Aware AI Adoption for Defense-Supply Manufacturers",
+  "provider": { "@type": "ProfessionalService", "name": "Stratum 137", "url": "https://stratum137.com/" },
+  "serviceType": "AI readiness assessment and automation for small defense-supply manufacturers",
+  "description": "AI adoption for small defense-supply manufacturers and machine shops that respects CMMC 2.0 / NIST 800-171 obligations: a CMMC-aware AI readiness assessment mapping which workflows can adopt AI without touching CUI, front-office automation outside the CUI boundary, missed-RFQ capture, institutional-knowledge documentation, and weekly defense-supply intelligence briefings. Not a C3PAO; works alongside your compliance consultant.",
+  "areaServed": "Arizona"
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20260717">
+<style>
+/* ===== defense-manufacturing funnel (dm-*) — vertical funnel template #1 ===== */
+.dm-hero { padding: 150px 0 70px; text-align: center; position: relative; }
+.dm-hero h1 { font-size: clamp(1.9rem, 4.6vw, 2.9rem); line-height: 1.2; font-family: var(--font-display); }
+.dm-hero .lead { margin: 22px auto 0; max-width: 720px; }
+.dm-newsbar {
+  margin: 34px auto 0; max-width: 780px; display: flex; gap: 12px; align-items: flex-start; text-align: left;
+  border: 1px solid rgba(251, 191, 36, 0.35); background: rgba(251, 191, 36, 0.06);
+  border-radius: var(--radius); padding: 14px 18px;
+}
+.dm-newsbar .tag { flex-shrink: 0; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; color: #fbbf24; border: 1px solid rgba(251,191,36,0.4); border-radius: 999px; padding: 3px 10px; margin-top: 2px; }
+.dm-newsbar p { font-size: 0.92rem; color: var(--text-dim); }
+.dm-newsbar b { color: var(--text); }
+
+.dm-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 46px; }
+@media (max-width: 860px) { .dm-stats { grid-template-columns: 1fr; } }
+.dm-stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; text-align: left; }
+.dm-stat .n { font-family: var(--font-display); font-size: 1.7rem; font-weight: 700; color: var(--teal); }
+.dm-stat p { margin-top: 6px; font-size: 0.86rem; color: var(--text-dim); }
+
+/* the boundary diagram */
+.dm-zones { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 860px; margin: 40px auto 0; border: 1px solid var(--border-strong); border-radius: var(--radius); overflow: hidden; }
+@media (max-width: 720px) { .dm-zones { grid-template-columns: 1fr; } }
+.dm-zone { padding: 26px 24px; }
+.dm-zone.cui { background: rgba(240, 113, 103, 0.05); border-right: 1px dashed rgba(240,113,103,0.35); }
+@media (max-width: 720px) { .dm-zone.cui { border-right: none; border-bottom: 1px dashed rgba(240,113,103,0.35); } }
+.dm-zone.open { background: rgba(45, 212, 191, 0.05); }
+.dm-zone h3 { font-family: var(--font-display); font-size: 1rem; letter-spacing: 0.04em; }
+.dm-zone.cui h3 { color: #f0928a; }
+.dm-zone.open h3 { color: var(--teal); }
+.dm-zone ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.dm-zone li { font-size: 0.88rem; color: var(--text-dim); padding-left: 22px; position: relative; }
+.dm-zone.cui li::before { content: "⛔"; position: absolute; left: 0; font-size: 0.8rem; }
+.dm-zone.open li::before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-weight: 700; }
+.dm-zone .zl { margin-top: 14px; font-size: 0.78rem; color: var(--text-faint); }
+
+/* service rows reuse ao-row rhythm */
+.dm-row { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 44px 0; border-top: 1px solid var(--border); }
+.dm-row:first-of-type { border-top: none; }
+.dm-row.flip .dm-art { order: 2; }
+@media (max-width: 860px) { .dm-row { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; } .dm-row.flip .dm-art { order: 0; } }
+.dm-num { font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; color: var(--teal-dim); letter-spacing: 0.14em; margin-bottom: 10px; }
+.dm-copy h3 { font-family: var(--font-display); font-size: 1.4rem; line-height: 1.3; margin-bottom: 12px; }
+.dm-before { font-size: 0.88rem; color: var(--text-faint); margin-bottom: 10px; }
+.dm-before b { color: #f0b8b0; font-weight: 600; }
+.dm-copy p { color: var(--text-dim); font-size: 0.97rem; }
+.dm-window { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: var(--radius); overflow: hidden; box-shadow: 0 18px 50px rgba(0,0,0,0.45), 0 0 34px rgba(45, 212, 191, 0.07); }
+.dm-bar { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--border); background: var(--bg-elevated); font-size: 0.74rem; color: var(--text-faint); letter-spacing: 0.06em; font-weight: 500; }
+.dm-dots { display: flex; gap: 5px; } .dm-dots span { width: 9px; height: 9px; border-radius: 50%; background: rgba(147,163,171,0.35); }
+.dm-body { padding: 16px 18px; display: flex; flex-direction: column; gap: 9px; font-size: 0.84rem; }
+.dm-line { display: flex; align-items: baseline; gap: 10px; padding: 8px 10px; border-radius: 8px; background: rgba(255,255,255,0.025); color: var(--text-dim); }
+.dm-tag { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.dm-tag.safe { background: rgba(45,212,191,0.14); color: var(--teal); }
+.dm-tag.hold { background: rgba(251,191,36,0.14); color: #fbbf24; }
+.dm-tag.no { background: rgba(240,113,103,0.14); color: #f0928a; }
+.dm-verdict { border-left: 2px solid var(--teal-dim); background: rgba(45,212,191,0.06); padding: 10px 12px; border-radius: 10px; color: var(--text); }
+.dm-verdict .from { display: block; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 4px; }
+
+.dm-honesty { max-width: 780px; margin: 0 auto; border: 1px solid var(--border); border-radius: var(--radius); background: rgba(45,212,191,0.04); padding: 26px 30px; }
+.dm-honesty h3 { font-family: var(--font-display); margin-bottom: 10px; }
+.dm-honesty ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.dm-honesty li { font-size: 0.92rem; color: var(--text-dim); padding-left: 22px; position: relative; }
+.dm-honesty li::before { content: "—"; position: absolute; left: 0; color: var(--teal); }
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/logo-mark.png" alt="Stratum 137" class="brand-mark">
+      <span class="brand-name">STRATUM 137</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#reality">Your Reality</a>
+      <a href="#boundary">The Boundary</a>
+      <a href="#services">What We Do</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <a href="mailto:david@stratum137.com?subject=CMMC-Aware%20AI%20Assessment" class="btn btn-primary nav-cta">Book the Assessment</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="dm-hero">
+    <div class="container">
+      <div class="eyebrow">For Arizona's Defense-Supply Manufacturers</div>
+      <h1>Everyone's selling you AI.<br><span class="accent">Nobody will tell you where it's allowed.</span></h1>
+      <p class="lead center">You machine parts for primes. Your inbox says SPRS score, your quoting backlog says hire someone, and every AI vendor pretends CUI doesn't exist. We're the AI firm that starts with your compliance boundary — and builds everything outside it.</p>
+      <div class="hero-actions" style="margin-top:32px; justify-content:center; display:flex; gap:14px; flex-wrap:wrap;">
+        <a href="mailto:david@stratum137.com?subject=CMMC-Aware%20AI%20Assessment" class="btn btn-primary">Book the CMMC-Aware AI Assessment</a>
+        <a href="#boundary" class="btn btn-ghost">See the Boundary Map</a>
+      </div>
+      <div class="dm-newsbar">
+        <span class="tag">JULY 2026</span>
+        <p><b>CMMC Phase II was suspended for small defense contractors on July 13.</b> Relief — but not safety: the primes are still auditing supply chains and demanding SPRS scores on new subcontracts. The rules paused. The pressure didn't.</p>
+      </div>
+    </div>
+    <div class="hero-glow"></div>
+  </section>
+
+  <section class="section" id="reality" style="padding-top:40px">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">Your Reality Right Now</div>
+        <h2>Squeezed between certification costs and prime-contractor pressure.</h2>
+      </div>
+      <div class="dm-stats">
+        <div class="dm-stat"><div class="n">$388K–$594K</div><p>SBA's estimate of what full CMMC certification can cost a small firm — before a single part ships. That math is why Phase II got suspended.</p></div>
+        <div class="dm-stat"><div class="n">SPRS, regardless</div><p>Lockheed, Raytheon, Northrop and the other primes are auditing supplier lists and requiring compliance documentation on new subcontracts — suspension or not.</p></div>
+        <div class="dm-stat"><div class="n">One question</div><p>&ldquo;Can we use AI tools in the shop without blowing up our CUI handling?&rdquo; Your IT guy shrugs. Your CMMC consultant says &ldquo;not my area.&rdquo; The AI vendors say &ldquo;sure!&rdquo; Nobody's actually answered it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="boundary" style="background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">The Answer, In One Picture</div>
+        <h2>AI belongs on one side of a line. We draw the line first.</h2>
+        <p class="lead center" style="margin-top:14px">Most of what eats your week — quoting follow-up, email, scheduling, paperwork chase — never touches controlled data. That's where AI goes to work. The CUI side stays exactly as your compliance posture demands.</p>
+      </div>
+      <div class="dm-zones" role="img" aria-label="Two-zone diagram: CUI-controlled zone where AI stays out, and the open front office where AI works">
+        <div class="dm-zone cui">
+          <h3>THE CONTROLLED ZONE — AI stays out</h3>
+          <ul>
+            <li>Part drawings, specs, and technical data marked CUI</li>
+            <li>Contract documents referencing controlled programs</li>
+            <li>Anything under your NIST 800-171 data-handling scope</li>
+          </ul>
+          <div class="zl">Your enclave, your rules. No cloud AI tool goes near it — and we put that in writing.</div>
+        </div>
+        <div class="dm-zone open">
+          <h3>THE OPEN FRONT OFFICE — AI goes to work</h3>
+          <ul>
+            <li>RFQ intake, quoting follow-up, and the &ldquo;did you get my quote?&rdquo; chase</li>
+            <li>General email triage, scheduling, vendor coordination</li>
+            <li>Marketing, reviews, hiring pipelines, bookkeeping prep</li>
+          </ul>
+          <div class="zl">The hours come back. The compliance boundary never moves.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">What We Do For Shops Like Yours</div>
+        <h2>Four services, each built around the boundary.</h2>
+      </div>
+
+      <div class="dm-row">
+        <div class="dm-art">
+          <div class="dm-window" role="img" aria-label="Sample of a tool-by-tool AI verdict from the assessment">
+            <div class="dm-bar"><span class="dm-dots"><span></span><span></span><span></span></span>ASSESSMENT — TOOL-BY-TOOL VERDICT (SAMPLE)</div>
+            <div class="dm-body">
+              <div class="dm-line"><span class="dm-tag safe">clear</span>AI phone/RFQ capture — front office only, no CUI path</div>
+              <div class="dm-line"><span class="dm-tag safe">clear</span>Email triage &amp; drafted replies — general inbox only</div>
+              <div class="dm-line"><span class="dm-tag hold">conditions</span>Doc drafting — approved templates, no controlled specs</div>
+              <div class="dm-line"><span class="dm-tag no">not here</span>Cloud AI on drawings/CAD marked CUI — stays out, in writing</div>
+              <div class="dm-verdict"><span class="from">what you walk away with</span>A data-flow map of your shop, a written verdict per workflow, and a 90-day adoption plan your compliance consultant can sign off on.</div>
+            </div>
+          </div>
+        </div>
+        <div class="dm-copy">
+          <div class="dm-num">SERVICE 01</div>
+          <div class="dm-before">Before: AI decisions made by <b>vendor promises and guesswork</b> — or not made at all.</div>
+          <h3>The CMMC-Aware AI Readiness Assessment</h3>
+          <p>We map how data actually moves through your shop, mark the CUI boundary, and hand you a tool-by-tool verdict: what's clear, what's conditional, what stays out — with the reasoning written down. It's the assessment a Big-4 firm would run, sized and priced for a shop your size.</p>
+        </div>
+      </div>
+
+      <div class="dm-row flip">
+        <div class="dm-art">
+          <div class="dm-window" role="img" aria-label="Sample RFQ follow-up queue">
+            <div class="dm-bar"><span class="dm-dots"><span></span><span></span><span></span></span>QUOTE FOLLOW-UP — OPEN LOOPS</div>
+            <div class="dm-body">
+              <div class="dm-line"><span class="dm-tag hold">6 days</span>Prime sub-tier buyer — $48K RFQ quoted, silent — nudge drafted</div>
+              <div class="dm-line"><span class="dm-tag hold">3 days</span>Local integrator — revision requested, awaiting your numbers</div>
+              <div class="dm-line"><span class="dm-tag safe">won</span>Repeat customer — PO received, kickoff scheduled</div>
+            </div>
+          </div>
+        </div>
+        <div class="dm-copy">
+          <div class="dm-num">SERVICE 02</div>
+          <div class="dm-before">Before: quotes go out and <b>nobody chases them</b> — the follow-up is the first thing dropped when the shop gets busy.</div>
+          <h3>The Front Office, Automated</h3>
+          <p>Every RFQ call answered, every quote tracked to a yes or a no, every open loop chased — drafted for your approval, sent under your name. Built entirely in the open zone. Your machinists machine; the follow-up never sleeps.</p>
+        </div>
+      </div>
+
+      <div class="dm-row">
+        <div class="dm-art">
+          <div class="dm-window" role="img" aria-label="Sample from the operations binder">
+            <div class="dm-bar"><span class="dm-dots"><span></span><span></span><span></span></span>THE SHOP&rsquo;S BLACK BOX — OPERATIONS BINDER</div>
+            <div class="dm-body">
+              <div class="dm-line"><span class="dm-tag safe">rule</span>Pricing: prototype runs quoted at 2.2× material + setup — never below</div>
+              <div class="dm-line"><span class="dm-tag safe">rule</span>Vendor: heat-treat goes to [redacted]; backup takes 2× lead time</div>
+              <div class="dm-line"><span class="dm-tag safe">rule</span>Quality: customer X rejects anything without full cert paper trail</div>
+              <div class="dm-verdict"><span class="from">why it matters</span>If the owner is out for a month, the shop still knows how the owner decides. Documented operations also read well to primes — and to buyers, when it's someday time to sell.</div>
+            </div>
+          </div>
+        </div>
+        <div class="dm-copy">
+          <div class="dm-num">SERVICE 03</div>
+          <div class="dm-before">Before: thirty years of judgment lives <b>in one person&rsquo;s head</b> — and the primes increasingly want documented process anyway.</div>
+          <h3>The Business Black Box</h3>
+          <p>A standing engagement that extracts your shop&rsquo;s operating knowledge — pricing instincts, vendor rules, quality thresholds — into a living operations binder with every rule backed by evidence. Continuity for your family, credibility for your primes, and value the day you ever sell.</p>
+        </div>
+      </div>
+
+      <div class="dm-row flip">
+        <div class="dm-art">
+          <div class="dm-window" role="img" aria-label="Sample weekly defense-supply intelligence briefing">
+            <div class="dm-bar"><span class="dm-dots"><span></span><span></span><span></span></span>WEEKLY BRIEFING — DEFENSE SUPPLY WATCH</div>
+            <div class="dm-body">
+              <div class="dm-line"><span class="dm-tag hold">rules</span>CMMC: what actually changed this week — in plain English</div>
+              <div class="dm-line"><span class="dm-tag safe">primes</span>Prime &amp; sub-tier moves in the AZ corridor</div>
+              <div class="dm-line"><span class="dm-tag safe">ai</span>AI entering machining — what&rsquo;s real vs. marketing</div>
+              <div class="dm-verdict"><span class="from">delivered</span>Monday morning, your inbox, sources linked. Reads in five minutes.</div>
+            </div>
+          </div>
+        </div>
+        <div class="dm-copy">
+          <div class="dm-num">SERVICE 04</div>
+          <div class="dm-before">Before: CMMC news arrives as <b>rumor at the trade counter</b> — and every rule change costs a day of confusion.</div>
+          <h3>The Defense-Supply Intelligence Briefing</h3>
+          <p>A weekly briefing built for your shop: regulatory changes decoded, prime-contractor moves in Arizona&rsquo;s corridor, and honest analysis of AI tools entering your trade. Seven research angles, every claim sourced, zero hype.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="dm-honesty">
+        <h3>What we are not — on purpose</h3>
+        <ul>
+          <li>We are <strong>not a C3PAO</strong> and we don&rsquo;t certify anyone.</li>
+          <li>We don&rsquo;t write your SSP or run your enclave — that&rsquo;s your compliance consultant&rsquo;s lane, and we work alongside them, not around them.</li>
+          <li>We don&rsquo;t put AI anywhere your data-handling obligations say it can&rsquo;t go — and we put that in writing before we build anything.</li>
+          <li>Every claim we make is sourced. If we can&rsquo;t source it, we don&rsquo;t say it.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact">
+    <div class="container contact-inner">
+      <h2>Find out where AI is allowed in your shop.</h2>
+      <p>One conversation. We&rsquo;ll tell you honestly what AI can and can&rsquo;t do inside your compliance posture — and what the front office could look like ninety days from now.</p>
+      <a href="mailto:david@stratum137.com?subject=CMMC-Aware%20AI%20Assessment" class="btn btn-primary btn-lg">Book the CMMC-Aware AI Assessment</a>
+      <p style="margin-top:14px"><a href="index.html" class="btn btn-ghost">or see everything we do</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo-mark.png" alt="Stratum 137" class="footer-mark">
+      <span>STRATUM 137</span>
+    </div>
+    <div class="footer-links">
+      <a href="index.html#services">Assessment</a>
+      <a href="ai-office.html">The AI Office</a>
+      <a href="defense-manufacturing.html">Defense Manufacturers</a>
+      <a href="mailto:david@stratum137.com">david@stratum137.com</a>
+    </div>
+  </div>
+  <div class="container footer-note">
+    137 — the number that holds the universe together at its smallest scale. We work at the layer where AI meets your business.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.querySelector('.nav-toggle');
+  var header = document.querySelector('.site-header');
+  if (!btn || !header) return;
+  btn.addEventListener('click', function () {
+    var open = header.classList.toggle('nav-open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('.nav a').forEach(function (a) {
+    a.addEventListener('click', function () { header.classList.remove('nav-open'); });
+  });
+})();
+</script>
+</body>
+</html>
