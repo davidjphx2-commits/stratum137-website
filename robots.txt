@@ -27,4 +27,16 @@ User-agent: CCBot
 Allow: /
 Disallow: /preview/
 
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /preview/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /preview/
+
+User-agent: meta-externalagent
+Allow: /
+Disallow: /preview/
+
 Sitemap: https://stratum137.com/sitemap.xml

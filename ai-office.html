@@ -34,6 +34,20 @@
 <link rel="stylesheet" href="style.css?v=20260716">
 <style>
 /* ===== AI Office page-scoped styles (ao-*) ===== */
+.pillar-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 860px) { .pillar-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .pillar-grid { grid-template-columns: 1fr; } }
+
+/* before / after band */
+.ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 36px; }
+@media (max-width: 860px) { .ba-grid { grid-template-columns: 1fr; } }
+.ba-card { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: var(--radius); overflow: hidden; box-shadow: 0 18px 50px rgba(0,0,0,0.4); }
+.ba-card img { display: block; width: 100%; height: auto; }
+.ba-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; margin-bottom: 10px; }
+.ba-tag.before { background: rgba(240,113,103,0.15); color: #f0928a; }
+.ba-tag.after { background: rgba(45,212,191,0.15); color: var(--teal); }
+.ba-copy { padding: 18px 20px 20px; }
+.ba-copy p { color: var(--text-dim); font-size: 0.92rem; margin: 0; }
 .ao-hero { padding: 150px 0 80px; text-align: center; position: relative; }
 .ao-hero h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; font-family: var(--font-display); }
 .ao-hero .lead { margin: 22px auto 0; }
@@ -195,6 +209,133 @@
       </div>
     </div>
     <div class="hero-glow"></div>
+  </section>
+
+  <section class="section" id="pillars" style="padding-top:56px">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">Not a Download — an Installation</div>
+        <h2>Anyone can download AI.<br>We install the expertise that makes it run your office.</h2>
+        <p class="lead center" style="margin-top:14px">Out of the box, AI is a blank genius that knows nothing about you and forgets everything. Your AI Office is different — six layers of setup, tuning, and protection that turn it into a trained employee.</p>
+      </div>
+
+      <div class="who-grid pillar-grid">
+        <div class="who-card" style="border-color: rgba(94,234,212,0.45);">
+          <h3>🔒 Security by design</h3>
+          <p>Fenced to one folder on your computer — it can't roam your drive, delete anything, or send a single email without your click. You get it in writing, in plain English.</p>
+        </div>
+        <div class="who-card">
+          <h3>Expert-configured</h3>
+          <p>Months of real-world tuning — instructions, voice, folder structure, guardrails — productized and installed for you. Not settings out of a box.</p>
+        </div>
+        <div class="who-card">
+          <h3>A brain that remembers</h3>
+          <p>A chatbot forgets you the moment you close it. Your AI Office keeps a memory vault of your business — customers, jobs, voice — and gets smarter every week.</p>
+        </div>
+        <div class="who-card">
+          <h3>Tools for your trade</h3>
+          <p>We install the specific skills your business needs — invoice chasing, lead triage, cash-flow checks — and hide the two hundred you don't.</p>
+        </div>
+        <div class="who-card">
+          <h3>The 10 automations</h3>
+          <p>Email triage, drafted replies, morning briefing, follow-up tracking and more — working on your real data from day one. Each one below.</p>
+        </div>
+        <div class="who-card">
+          <h3>Installed, tuned &amp; taught</h3>
+          <p>Set up on-site, tested live, and taught to you in person — with a professional owner's manual so nothing gets forgotten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="office-band" id="vault">
+    <div class="container office-band-inner">
+      <div>
+        <div class="eyebrow">The Vault</div>
+        <h2>Memory you can actually see.</h2>
+        <p class="lead">Every note, customer, job, and decision gets filed into a living knowledge vault on your own computer. Ask about a client from three months ago and it answers with the whole history. The longer you use it, the more it knows — and it's yours, not ours: plain files, on your machine, forever.</p>
+        <div class="office-chips" aria-hidden="true">
+          <span class="office-chip">Your <strong>customers</strong></span>
+          <span class="office-chip">Your <strong>jobs &amp; deals</strong></span>
+          <span class="office-chip">Your <strong>voice</strong></span>
+          <span class="office-chip">Compounds <strong>weekly</strong></span>
+        </div>
+        <a href="mailto:david@stratum137.com?subject=AI%20Office" class="btn btn-primary">Get Your AI Office</a>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Knowledge vault graph — your business as a connected memory network" style="width:100%; max-width:480px; height:auto;">
+          <defs>
+            <radialGradient id="vg-core" cx="40%" cy="35%" r="80%">
+              <stop offset="0%" stop-color="#d8fff5"/>
+              <stop offset="45%" stop-color="#5eead4"/>
+              <stop offset="100%" stop-color="#0c6b60"/>
+            </radialGradient>
+            <filter id="vg-glow" x="-80%" y="-80%" width="260%" height="260%">
+              <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#2dd4bf" flood-opacity="0.65"/>
+            </filter>
+          </defs>
+          <g stroke="#2dd4bf" stroke-opacity="0.22" stroke-width="1.4">
+            <path d="M260 200 L140 96"/><path d="M260 200 L96 214"/><path d="M260 200 L170 316"/>
+            <path d="M260 200 L382 110"/><path d="M260 200 L420 246"/><path d="M260 200 L318 330"/>
+            <path d="M140 96 L96 214"/><path d="M140 96 L226 60"/><path d="M382 110 L226 60"/>
+            <path d="M382 110 L462 84"/><path d="M420 246 L462 84"/><path d="M420 246 L318 330"/>
+            <path d="M170 316 L96 214"/><path d="M170 316 L318 330"/><path d="M96 214 L48 140"/>
+            <path d="M226 60 L140 96"/><path d="M462 84 L382 110"/><path d="M48 140 L140 96"/>
+            <path d="M318 330 L244 366"/><path d="M170 316 L244 366"/>
+          </g>
+          <g fill="#5eead4" fill-opacity="0.5">
+            <circle cx="48" cy="140" r="4"/><circle cx="226" cy="60" r="5"/><circle cx="462" cy="84" r="4"/>
+            <circle cx="244" cy="366" r="4"/><circle cx="500" cy="180" r="3"/><circle cx="30" cy="300" r="3"/>
+            <circle cx="360" cy="30" r="3"/><circle cx="80" cy="40" r="2.5"/><circle cx="470" cy="330" r="2.5"/>
+          </g>
+          <g filter="url(#vg-glow)">
+            <circle cx="140" cy="96" r="10" fill="#2dd4bf" fill-opacity="0.85"/>
+            <circle cx="96" cy="214" r="12" fill="#2dd4bf" fill-opacity="0.8"/>
+            <circle cx="170" cy="316" r="9" fill="#2dd4bf" fill-opacity="0.75"/>
+            <circle cx="382" cy="110" r="11" fill="#2dd4bf" fill-opacity="0.8"/>
+            <circle cx="420" cy="246" r="9" fill="#2dd4bf" fill-opacity="0.75"/>
+            <circle cx="318" cy="330" r="10" fill="#2dd4bf" fill-opacity="0.8"/>
+            <circle cx="260" cy="200" r="22" fill="url(#vg-core)"/>
+          </g>
+          <ellipse cx="252" cy="191" rx="8" ry="5" fill="#ffffff" opacity="0.5"/>
+          <g font-family="Inter, sans-serif" font-size="11" fill="#93a3ab">
+            <text x="140" y="80" text-anchor="middle">Customers</text>
+            <text x="96" y="238" text-anchor="middle">Jobs</text>
+            <text x="170" y="340" text-anchor="middle">Money</text>
+            <text x="382" y="94" text-anchor="middle">Notes</text>
+            <text x="420" y="270" text-anchor="middle">Follow-ups</text>
+            <text x="318" y="354" text-anchor="middle">Documents</text>
+            <text x="260" y="238" text-anchor="middle" fill="#5eead4" font-weight="600">Your Business</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="before-after" style="padding-top:56px">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">The Difference You Actually Feel</div>
+        <h2>From sticky notes to peace of mind.</h2>
+        <p class="lead center" style="margin-top:14px">Same owner. Same office. One AI Office install between the two photos.</p>
+      </div>
+      <div class="ba-grid">
+        <figure class="ba-card">
+          <img src="assets/img/ao-before.jpg" alt="A business owner at her desk, overwhelmed — monitor and wall covered in sticky-note reminders, piles of mail and to-do lists" loading="lazy">
+          <figcaption class="ba-copy">
+            <span class="ba-tag before">Before</span>
+            <p>Every reminder lives on a sticky note, every follow-up lives in her head, and the inbox sets the agenda. Nothing falls through — as long as she never stops.</p>
+          </figcaption>
+        </figure>
+        <figure class="ba-card">
+          <img src="assets/img/ao-after.jpg" alt="The same owner, relaxed with her coffee — clean desk, and her screen showing drafted replies and a morning briefing handled by her AI Office" loading="lazy">
+          <figcaption class="ba-copy">
+            <span class="ba-tag after">After</span>
+            <p>The AI Office triaged the inbox, drafted the replies, and briefed her day before she sat down. The sticky notes are gone — the vault remembers now. She just approves and gets her time back.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
   </section>
 
   <section class="section" id="automations" style="padding-top:40px">
@@ -441,7 +582,7 @@
             <li>Your voice, your guardrails: nothing sends without your approval</li>
             <li>Plain-English operator's manual + the daily ritual, taught in person</li>
           </ul>
-          <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; margin-bottom: 4px;">$2,500 <span style="font-size: 0.85rem; color: var(--text-dim); font-weight: 400;">founding rate · $3,500 standard</span></div><div style="font-size: 0.82rem; color: var(--text-faint); margin-bottom: 16px;">One day. One payment. You own everything.</div><a href="mailto:david@stratum137.com?subject=AI%20Office%20Setup" class="btn btn-outline">Claim a Founding Spot</a>
+          <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; margin-bottom: 4px;">$750 <span style="font-size: 0.85rem; color: var(--text-dim); font-weight: 400;">Founding 10 rate · $2,500 standard</span></div><div style="font-size: 0.82rem; color: var(--text-faint); margin-bottom: 16px;">One day. One payment. You own everything. First ten businesses only — in exchange for your honest feedback and a reference.</div><a href="mailto:david@stratum137.com?subject=AI%20Office%20Setup" class="btn btn-outline">Claim a Founding Spot</a>
         </div>
         <div class="ao-tier hot">
           <h3>The AI Office — Coach</h3>
@@ -453,7 +594,7 @@
             <li>Tune-ups as AI models improve (they change fast; your setup keeps up)</li>
             <li>Quarterly review: what's working, hours saved, what to automate next</li>
           </ul>
-          <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; margin-bottom: 4px;">$500<span style="font-size: 0.9rem;">/mo</span> <span style="font-size: 0.85rem; color: var(--text-dim); font-weight: 400;">founding · $750/mo standard</span></div><div style="font-size: 0.82rem; color: var(--text-faint); margin-bottom: 16px;">Includes the AI Office setup. 3-month minimum, then month-to-month.</div><a href="mailto:david@stratum137.com?subject=AI%20Office%20Coach" class="btn btn-primary">Start With Coach</a>
+          <div style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; margin-bottom: 4px;">$350<span style="font-size: 0.9rem;">/mo</span> <span style="font-size: 0.85rem; color: var(--text-dim); font-weight: 400;">Founding 10 · $500/mo standard</span></div><div style="font-size: 0.82rem; color: var(--text-faint); margin-bottom: 16px;">Includes the AI Office setup. 3-month minimum, then month-to-month. First ten businesses only.</div><a href="mailto:david@stratum137.com?subject=AI%20Office%20Coach" class="btn btn-primary">Start With Coach</a>
         </div>
       </div>
       <div class="ao-guard">
@@ -497,7 +638,7 @@
   <section class="section contact">
     <div class="container contact-inner">
       <h2>Your office could run like this by next week.</h2>
-      <p>Founding pricing — $2,500 setup or $500/mo Coach — for the first businesses on board. Tell us what your week looks like — we'll tell you honestly which of the ten will pay for the whole thing.</p>
+      <p>Founding 10 pricing — $750 setup or $350/mo Coach — for the first ten businesses on board. Tell us what your week looks like — we'll tell you honestly which of the ten automations will pay for the whole thing.</p>
       <a href="mailto:david@stratum137.com?subject=AI%20Office" class="btn btn-primary btn-lg">Get Your AI Office</a>
       <p style="margin-top:14px"><a href="index.html#services" class="btn btn-ghost">or start with the $999 assessment</a></p>
     </div>
