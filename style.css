@@ -915,3 +915,83 @@ a { color: inherit; text-decoration: none; }
   background: rgba(45, 212, 191, 0.14); color: var(--teal);
 }
 .office-mini-row .t.warn { background: rgba(240, 113, 103, 0.14); color: #f0928a; }
+
+/* ===== 4th Wave story band ===== */
+.wave-band {
+  position: relative;
+  overflow: hidden;
+  background: #0b0e14;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.wave-band-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(11,14,20,0) 30%, rgba(11,14,20,0.82) 58%, rgba(11,14,20,0.95) 100%),
+    url('assets/img/wave-4th.webp');
+  background-size: auto 118%, cover;
+  background-position: left center, left center;
+  background-repeat: no-repeat;
+}
+.wave-band-inner {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 88px;
+  padding-bottom: 88px;
+}
+.wave-band-copy { max-width: 560px; }
+.wave-band-mark {
+  width: 72px;
+  height: auto;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 0 18px rgba(45, 212, 191, 0.35));
+}
+.wave-band-copy h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin-bottom: 18px; }
+.wave-band-lead { color: var(--text-dim); margin-bottom: 14px; }
+.wave-band-lead strong { color: var(--text); }
+.wave-band-arc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 22px 0 26px;
+  padding: 0;
+}
+.wave-band-arc li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 14px;
+  background: rgba(12, 17, 25, 0.6);
+}
+.wave-band-arc .wave-num {
+  font-weight: 700;
+  color: var(--text-faint);
+}
+.wave-band-arc .wave-now {
+  color: var(--teal);
+  border-color: var(--border-strong);
+  box-shadow: 0 0 18px rgba(45, 212, 191, 0.18);
+}
+.wave-band-arc .wave-now .wave-num { color: var(--teal-bright); }
+.wave-band-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+@media (max-width: 900px) {
+  .wave-band-bg {
+    background-image:
+      linear-gradient(rgba(11,14,20,0.72), rgba(11,14,20,0.9)),
+      url('assets/img/wave-4th.webp');
+    background-size: cover, cover;
+    background-position: 22% center, 22% center;
+  }
+  .wave-band-inner { justify-content: flex-start; padding-top: 64px; padding-bottom: 64px; }
+}
