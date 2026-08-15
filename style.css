@@ -1051,3 +1051,48 @@ a { color: inherit; text-decoration: none; }
 }
 .custom-band-shot:hover img { transform: translateY(-3px); border-color: var(--teal-dim); }
 @media (max-width: 860px) { .custom-band-inner { grid-template-columns: 1fr; } }
+
+/* ===== Cinematic page backdrops — 2026-08 visual refresh ===== */
+.page-bg {
+  position: absolute; inset: 0 0 auto 0;
+  height: min(94vh, 920px);
+  z-index: 0; overflow: hidden; pointer-events: none;
+}
+.page-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 38%;
+  opacity: 0.9;
+  animation: bgDrift 30s ease-in-out infinite alternate;
+}
+.page-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(6,9,16,0.86) 0%, rgba(6,9,16,0.30) 26%, rgba(6,9,16,0.42) 55%, rgba(6,9,16,0.86) 82%, var(--bg) 100%),
+    radial-gradient(130% 90% at 50% 30%, rgba(6,9,16,0) 42%, var(--bg) 100%);
+}
+@keyframes bgDrift { from { transform: scale(1); } to { transform: scale(1.07); } }
+@media (prefers-reduced-motion: reduce) { .page-bg img { animation: none; } }
+main, .site-header { position: relative; z-index: 1; }
+
+/* glass panel for feature renders */
+.render-panel {
+  border: 1px solid var(--border-strong); border-radius: var(--radius);
+  overflow: hidden; box-shadow: 0 24px 70px rgba(0,0,0,0.55), 0 0 44px rgba(45,212,191,0.10);
+  position: relative;
+}
+.render-panel img { display: block; width: 100%; height: auto; }
+.render-panel::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(6,9,16,0) 62%, rgba(6,9,16,0.55) 100%);
+}
+.render-caption {
+  position: absolute; left: 18px; right: 18px; bottom: 12px; z-index: 1;
+  font-size: 0.82rem; color: var(--text-dim); letter-spacing: 0.02em;
+}
+
+/* hero text legibility over cinematic backdrops */
+.hero h1, .ao-hero h1, .hero .eyebrow, .ao-hero .eyebrow,
+.hero-sub, .ao-hero .lead, .hero-assurance {
+  text-shadow: 0 2px 22px rgba(6,9,16,0.95), 0 0 56px rgba(6,9,16,0.7);
+}
+.hero-sub, .ao-hero .lead { color: var(--text); }

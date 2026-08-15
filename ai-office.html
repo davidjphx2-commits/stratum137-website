@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260720bb">
+<link rel="stylesheet" href="style.css?v=20260815lux">
 <style>
 /* ===== AI Office page-scoped styles (ao-*) ===== */
 .pillar-grid { grid-template-columns: repeat(3, 1fr); }
@@ -191,6 +191,8 @@
 
 <div class="bg-grid"></div>
 
+<div class="page-bg" aria-hidden="true"><img src="assets/img/setup-awakening.jpg" alt="" fetchpriority="high"></div>
+
 <header class="site-header">
   <div class="container header-inner">
     <a href="index.html" class="brand">
@@ -200,6 +202,7 @@
     <nav class="nav" id="nav">
       <a href="index.html">Home</a>
       <a href="ai-office.html">AI Office</a>
+      <a href="understanding-ai.html">AI 101</a>
       <a href="assessment.html">Assessment</a>
       <a href="ai-engine.html">Revenue Engine</a>
       <a href="content-growth.html">Content Growth</a>
@@ -281,6 +284,11 @@
         <p class="lead center" style="margin-top:14px">Already on Google Workspace? Team lives in ChatGPT? Prefer Claude? Good — keep it. Each platform ships with real capability switched off, buried, or left unconfigured. Here's what comes in the box, and what we actually set up.</p>
       </div>
 
+      <div class="render-panel" style="max-width:900px; margin:38px auto 0;">
+        <img src="assets/img/platforms-triad.jpg" alt="Three glass monoliths representing the three AI platforms, all connected by streams of light to one glowing cube — your business knowledge feeding whichever platform you choose" loading="lazy">
+        <div class="render-caption">Three platforms. One source of truth — yours.</div>
+      </div>
+
       <div class="ao-plat-grid">
         <div class="ao-plat">
           <h3>Claude</h3>
@@ -359,8 +367,12 @@
         </div>
         <a href="mailto:david@stratum137.com?subject=AI%20Office" class="btn btn-primary">Get Your AI Office</a>
       </div>
-      <div style="display:flex; align-items:center; justify-content:center;">
-        <svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Knowledge vault graph — your business as a connected memory network" style="width:100%; max-width:480px; height:auto;">
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;">
+        <div class="render-panel" style="max-width:560px;">
+          <img src="assets/img/company-brain.jpg" alt="The Company Brain — your business knowledge held in a glass cube, with three glowing doorways representing Claude, ChatGPT, and Gemini" loading="lazy">
+          <div class="render-caption">One brain. Three doorways. Yours wherever you go.</div>
+        </div>
+        <svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Knowledge vault graph — your business as a connected memory network" style="width:100%; max-width:400px; height:auto; opacity:0.9;">
           <defs>
             <radialGradient id="vg-core" cx="40%" cy="35%" r="80%">
               <stop offset="0%" stop-color="#d8fff5"/>
@@ -752,6 +764,7 @@
     <div class="footer-links">
       <a href="index.html">Home</a>
       <a href="ai-office.html">The AI Office</a>
+      <a href="understanding-ai.html">Understanding AI</a>
       <a href="assessment.html">Assessment</a>
       <a href="ai-engine.html">AI Revenue Engine</a>
       <a href="content-growth.html">Content Growth Engine</a>
