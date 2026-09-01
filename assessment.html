@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Business Assessment — Know Where AI Pays For Itself | Stratum 137</title>
-<meta name="description" content="The $1,950 AI Business Assessment: a 7-dimension readiness score, a full website &amp; digital presence audit, exact tool recommendations at two price tiers, and an ROI one-pager — in 48 hours. Tuned to B2B or B2C.">
+<title>AI Business Assessment — Find the Constraint, Prove the ROI | Stratum 137</title>
+<meta name="description" content="The Stratum 137 AI Business Assessment, two tiers: the $500 AI Opportunity Snapshot (readiness score, top 3 plays, 90-day plan in days) and the Strategic Assessment ($5,000–$10,000: full competitor audit, market roadmap, financial model). Fee credits forward when you continue.">
 <link rel="canonical" href="https://stratum137.com/assessment.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stratum137.com/assessment.html">
 <meta property="og:title" content="AI Business Assessment — Stratum 137">
-<meta property="og:description" content="Know exactly where AI pays for itself in your business — readiness score, website audit, tool plan, ROI math. 48 hours, $1,950 flat.">
-<meta property="og:image" content="https://stratum137.com/assets/logo.png">
+<meta property="og:description" content="Two tiers: the $500 Snapshot finds where AI pays for itself in days; the Strategic Assessment delivers the full boardroom-grade roadmap. Fees credit forward.">
+<meta property="og:image" content="https://stratum137.com/assets/img/bg-assessment.jpg">
 <meta property="og:site_name" content="Stratum 137">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AI Business Assessment — Stratum 137">
-<meta name="twitter:description" content="Readiness score, website audit, exact tools, ROI math — in 48 hours. $1,950 flat.">
+<meta name="twitter:description" content="$500 Snapshot in days, or the full Strategic Assessment — readiness score, competitor audit, ROI math, roadmap.">
+<meta name="twitter:image" content="https://stratum137.com/assets/img/bg-assessment.jpg">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <script type="application/ld+json">
 {
@@ -22,15 +23,18 @@
   "@type": "Service",
   "name": "AI Business Assessment",
   "provider": { "@type": "ProfessionalService", "name": "Stratum 137", "url": "https://stratum137.com/", "email": "david@stratum137.com" },
-  "description": "A flat-fee AI readiness assessment for small businesses: 45-minute guided discovery, readiness score across 7 dimensions, full website and digital presence audit, tool recommendations at two price tiers, integration map, and ROI one-pager — delivered within 48 hours. Tailored to B2B or B2C business models.",
+  "description": "A two-tier AI readiness assessment for small businesses. Tier 1, the AI Opportunity Snapshot ($500): guided discovery, 7-dimension readiness score, digital presence scan, top 3 AI plays with a 90-day plan and ROI estimate, delivered in about 3 business days. Tier 2, the Strategic Assessment & Market Roadmap ($5,000–$10,000): everything in the Snapshot plus a full competitor audit, market and regulatory sweep, AI-visibility probe, five prioritized plays across three horizons, an 18-month quarter-by-quarter roadmap, and a complete financial model with sensitivity analysis — a 55-to-65-page boardroom-grade report. Assessment fees credit toward continued work.",
   "areaServed": "United States",
-  "offers": { "@type": "Offer", "price": "1950", "priceCurrency": "USD", "description": "$1,950 flat" }
+  "offers": [
+    { "@type": "Offer", "name": "AI Opportunity Snapshot", "price": "500", "priceCurrency": "USD", "description": "~15-page report: readiness score, top 3 plays, 90-day plan. About 3 business days." },
+    { "@type": "Offer", "name": "Strategic Assessment & Market Roadmap", "priceSpecification": { "@type": "PriceSpecification", "minPrice": "5000", "maxPrice": "10000", "priceCurrency": "USD" }, "description": "55–65 page strategic report: competitor audit, market roadmap, financial model. 2–3 weeks." }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260815lux">
+<link rel="stylesheet" href="style.css?v=20260831b">
 <style>
 .ao-hero { padding: 150px 0 70px; text-align: center; position: relative; }
 .ao-hero h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; font-family: var(--font-display); }
@@ -81,6 +85,22 @@
 .slide-shot img { display: block; width: 100%; height: auto; }
 .slide-shot figcaption { padding: 12px 16px; font-size: 0.84rem; color: var(--text-dim); border-top: 1px solid var(--border); }
 .slide-shot figcaption strong { color: var(--text); }
+/* tier cards */
+.tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 40px; }
+@media (max-width: 860px) { .tier-grid { grid-template-columns: 1fr; } }
+.tier-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 30px; display: flex; flex-direction: column; }
+.tier-card.flagship { border-color: var(--border-strong); background: linear-gradient(160deg, rgba(94,234,212,0.05), var(--bg-card)); box-shadow: 0 0 40px -10px rgba(94,234,212,0.15); }
+.tier-label { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-dim); margin-bottom: 10px; }
+.tier-card h3 { font-size: 1.5rem; margin-bottom: 4px; }
+.tier-price { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; color: var(--teal); margin-bottom: 4px; }
+.tier-price span { font-size: 0.85rem; color: var(--text-faint); font-weight: 400; }
+.tier-turn { font-size: 0.86rem; color: var(--text-dim); margin-bottom: 18px; }
+.tier-card ul { list-style: none; margin: 0 0 20px; padding: 0; }
+.tier-card li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--text-dim); font-size: 0.94rem; }
+.tier-card li::before { content: ''; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 2px; background: var(--teal-dim); transform: rotate(45deg); }
+.tier-card li strong { color: var(--text); }
+.tier-foot { margin-top: auto; }
+.tier-note { font-size: 0.84rem; color: var(--text-faint); margin-top: 12px; }
 </style>
 <!--
   FORM ENDPOINT: posts to Mission Control leads intake API (Agent Inbox).
@@ -100,11 +120,12 @@
     </a>
     <nav class="nav" id="nav">
       <a href="index.html">Home</a>
-      <a href="ai-office.html">AI Office</a>
-      <a href="understanding-ai.html">AI 101</a>
       <a href="services.html">Services</a>
+      <a href="assessment.html">Assessment</a>
+      <a href="ai-officer.html">AI Officer</a>
+      <a href="sprints.html">Sprints</a>
+      <a href="understanding-ai.html">AI 101</a>
       <a href="defense-manufacturing.html">Defense &amp; CMMC</a>
-      <a href="index.html#about">About</a>
     </nav>
     <a href="#start" class="btn btn-primary nav-cta">Start Your Assessment</a>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
@@ -115,40 +136,83 @@
 
 <nav class="svc-tabs" aria-label="Services">
   <a href="services.html">All Services</a>
-  <a href="ai-office.html">AI Office</a>
   <a href="assessment.html" class="on">Assessment</a>
-  <a href="ai-engine.html">Revenue Engine</a>
-  <a href="content-growth.html">Content Growth</a>
-  <a href="custom-work.html">Custom Work</a>
+  <a href="ai-officer.html">AI Officer</a>
+  <a href="sprints.html">Wedge Sprints</a>
+  <a href="custom-work.html">Custom &amp; Advisory</a>
 </nav>
 
 <main id="top">
 
   <section class="ao-hero">
     <div class="container">
-      <div class="eyebrow">The AI Business Assessment · $1,950 Flat</div>
-      <h1>Know exactly where AI pays for itself —<br><span class="accent">before you spend a dollar on it.</span></h1>
-      <p class="lead center">A 45-minute guided discovery, then our engine maps your operation against the tools that actually fit it. Within 48 hours you're holding a readiness score, a full website &amp; digital presence audit, exact tool picks with the math, and an ROI one-pager. No jargon. No upsell pressure.</p>
+      <div class="eyebrow">The Flagship — AI Business Assessment</div>
+      <h1>Know exactly where AI pays for itself —<br><span class="accent">before you spend real money on it.</span></h1>
+      <p class="lead center">95% of AI pilots fail — almost always because they automated the wrong thing. We start where the pros start: find the constraint. A guided discovery, then our engine maps your operation, your market, and your digital presence — and hands you the plays, the math, and the order to run them in.</p>
       <div class="hero-actions" style="margin-top:32px; justify-content:center; display:flex; gap:14px; flex-wrap:wrap;">
         <a href="#start" class="btn btn-primary">Start Your Assessment</a>
-        <a href="#deliverables" class="btn btn-ghost">See What You Get</a>
+        <a href="#tiers" class="btn btn-ghost">Compare the Two Tiers</a>
       </div>
       <div class="ao-strip" aria-hidden="true">
-        <span class="ao-chip"><strong>48 hours</strong> to delivery</span>
+        <span class="ao-chip">Snapshot <strong>$500</strong> · days</span>
+        <span class="ao-chip">Strategic <strong>$5–10K</strong> · boardroom-grade</span>
         <span class="ao-chip"><strong>7 dimensions</strong> scored</span>
-        <span class="ao-chip">Website <strong>audit included</strong></span>
-        <span class="ao-chip">Tuned for <strong>B2B or B2C</strong></span>
+        <span class="ao-chip">Fees <strong>credit forward</strong></span>
       </div>
     </div>
     <div class="hero-glow"></div>
   </section>
 
-  <section class="section" id="deliverables" style="padding-top:30px">
+  <section class="section" id="tiers" style="padding-top:30px">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">Two Tiers, One Standard</div>
+        <h2>Start with the Snapshot. Go Strategic when the stakes justify it.</h2>
+      </div>
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="tier-label">Tier 1 · Start Here</div>
+          <h3>AI Opportunity Snapshot</h3>
+          <div class="tier-price">$500 <span>flat</span></div>
+          <p class="tier-turn">~15 pages · about 3 business days</p>
+          <ul>
+            <li><strong>Readiness score</strong> across 7 dimensions — including the security check most consultants skip</li>
+            <li><strong>Digital presence scan</strong> — your site as your next customer (and their AI assistant) experiences it</li>
+            <li><strong>Top 3 plays</strong>, one page each: what, how, payoff, first step</li>
+            <li><strong>90-day plan</strong> sequenced by fastest payback, with a one-page ROI estimate — assumptions shown</li>
+          </ul>
+          <div class="tier-foot">
+            <a href="#start" class="btn btn-primary">Get the Snapshot</a>
+            <p class="tier-note">Credited in full toward the Strategic tier or a <a href="sprints.html" style="color:var(--teal)">Wedge Sprint</a> within 60 days.</p>
+          </div>
+        </div>
+        <div class="tier-card flagship">
+          <div class="tier-label">Tier 2 · The Flagship</div>
+          <h3>Strategic Assessment &amp; Market Roadmap</h3>
+          <div class="tier-price">$5,000–$10,000 <span>by scope</span></div>
+          <p class="tier-turn">55–65 pages · 2–3 weeks</p>
+          <ul>
+            <li><strong>Everything in the Snapshot</strong>, at full research depth with a verified source register</li>
+            <li><strong>Competitor audit</strong> — up to 6 rivals scored, plus what AI assistants say when your buyers ask</li>
+            <li><strong>Where your market is headed</strong> — regulation, industry trajectory, and the operator profile that wins it</li>
+            <li><strong>Five plays across three horizons</strong> + an 18-month quarter-by-quarter roadmap</li>
+            <li><strong>Full financial model</strong> with sensitivity analysis — every number traceable</li>
+          </ul>
+          <div class="tier-foot">
+            <a href="#start" class="btn btn-primary">Scope the Strategic</a>
+            <p class="tier-note">The report our clients take to their partners and their bank. Fee credits toward implementation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="deliverables" style="padding-top:10px">
     <div class="container">
 
       <div class="ao-row">
         <div class="ao-copy">
-          <div class="ao-num">DELIVERABLE 01</div>
+          <div class="ao-num">INSIDE BOTH TIERS 01</div>
           <h3>Your AI readiness score — across 7 dimensions.</h3>
           <p>We score your operation the way an engineer would: data, tools, process, people, security, budget, and customer experience. You see exactly where you're ready for AI today, where you'd be wasting money, and which gaps are cheap to close. Including the one most consultants skip: <strong>security</strong> — what AI should be allowed to touch in your business, and what it never should.</p>
         </div>
@@ -169,20 +233,18 @@
 
       <div class="ao-row flip">
         <div class="ao-copy">
-          <div class="ao-num">DELIVERABLE 02</div>
-          <h3>A full website &amp; digital presence audit — included.</h3>
-          <p>Before AI can grow your business, your digital front door has to work. We tear down your website the way your next customer experiences it: speed, mobile, search visibility, what AI assistants like ChatGPT say about you when asked, and whether the site actually converts visitors into contacts. You get findings ranked by revenue impact — not a 40-page PDF of jargon.</p>
-          <p style="margin-top:10px"><strong>Tuned to who you sell to.</strong> A B2B audit asks different questions than a B2C one — decision-committee buyers vs. same-day consumers, RFP credibility vs. click-to-call. Tell us which you are and the whole teardown adjusts its lens.</p>
+          <div class="ao-num">INSIDE BOTH TIERS 02</div>
+          <h3>The wedges — small programs your team could start next week.</h3>
+          <p>Most of your core work needs human judgment, and we'll never tell you to automate it. What the assessment finds instead are the <strong>wedges</strong>: high-frequency friction points with objective pass/fail rules — the packet that bounces for a missing form, the lead that waits days, the data typed twice. Each wedge comes quantified from your own numbers: what it costs you now, what the fix returns, why it's near-zero risk.</p>
         </div>
         <div class="ao-demo">
           <div class="ao-window">
-            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">WEBSITE AUDIT — FINDINGS <span class="mode-pill" style="margin-left:8px"><span class="on">B2B</span><span>B2C</span></span></span></div>
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">WEDGES FOUND — SAMPLE CLIENT</span></div>
             <div class="ao-body">
-              <div class="audit-find"><span class="ao-tag warn">CRITICAL</span>No case studies or proof for a committee buyer — B2B visitors leave without a reason to shortlist you</div>
-              <div class="audit-find"><span class="ao-tag warn">HIGH</span>4.2s mobile load — half your visitors gone before the page paints</div>
-              <div class="audit-find"><span class="ao-tag money">HIGH</span>Invisible to AI search — ChatGPT can't describe what you do; competitors own the answer</div>
-              <div class="audit-find"><span class="ao-tag deal">QUICK WIN</span>Contact form asks 11 fields — cut to 4, expect roughly 2× the inquiries</div>
-              <div class="ao-item"><span class="ao-tag deal">RANKED</span><span class="what">14 findings by revenue impact · each with the fix and the effort level</span></div>
+              <div class="audit-find"><span class="ao-tag deal">WEDGE 1</span>Job packets checked complete before review — kills the 3-day missing-photo bounce · ~$14k/yr</div>
+              <div class="audit-find"><span class="ao-tag deal">WEDGE 2</span>Every web lead answered inside the hour, in your voice · ~$21k/yr at your close rate</div>
+              <div class="audit-find"><span class="ao-tag deal">WEDGE 3</span>Quote data flows to invoicing — 6 hrs/wk of re-keying gone</div>
+              <div class="ao-item"><span class="ao-tag money">RULE</span><span class="what">Judgment stays human. The machine only checks objective rules.</span></div>
             </div>
           </div>
         </div>
@@ -190,18 +252,37 @@
 
       <div class="ao-row">
         <div class="ao-copy">
-          <div class="ao-num">DELIVERABLE 03</div>
-          <h3>Exact tools for your budget — with the math.</h3>
-          <p>Not "consider exploring AI solutions." Named tools, at two price tiers — a lean stack and a growth stack — matched to what you already run, so nothing gets ripped out. Plus a visual integration map showing how everything connects, and an ROI one-pager: what it costs, what it returns, and what waiting costs you per month.</p>
+          <div class="ao-num">INSIDE BOTH TIERS 03</div>
+          <h3>The math — with the do-nothing number in writing.</h3>
+          <p>Not "consider exploring AI solutions." Named tools matched to what you already run, an integration map, and an ROI page built on conservative assumptions you can check: what it costs, what it returns, and what waiting costs you per month. The Strategic tier extends this into a full financial model with a sensitivity appendix — what moves the number, and by how much.</p>
         </div>
         <div class="ao-demo">
           <div class="ao-window">
             <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">ROI ONE-PAGER — SUMMARY</span></div>
             <div class="ao-body">
-              <div class="ao-item"><span class="ao-tag money">$2,340/mo</span><span class="who">Leak</span><span class="what">missed calls + slow follow-up, at your close rate</span></div>
+              <div class="ao-item"><span class="ao-tag money">$2,340/mo</span><span class="who">Leak</span><span class="what">missed follow-up + rework, at your close rate</span></div>
               <div class="ao-item"><span class="ao-tag deal">$610/mo</span><span class="who">Stack cost</span><span class="what">lean tier — tools named, prices confirmed</span></div>
               <div class="ao-item"><span class="ao-tag deal">3.8×</span><span class="who">Return</span><span class="what">conservative case, month one</span></div>
               <div class="ao-item"><span class="ao-tag warn">$28k/yr</span><span class="who">Cost of waiting</span><span class="what">the do-nothing number, in writing</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ao-row flip">
+        <div class="ao-copy">
+          <div class="ao-num">STRATEGIC TIER ONLY</div>
+          <h3>Your market, your competitors — and what the AI assistants say about you.</h3>
+          <p>The Strategic tier audits up to six competitors with the same scan we run on you, probes what ChatGPT and Claude actually tell buyers who ask for businesses like yours, maps where your industry is consolidating and where the premium layer will sit in five years, and prices the cost of inaction. Every load-bearing claim is re-verified against a primary source and logged in an appendix — this is the report you can defend in front of a partner, a lender, or a board.</p>
+        </div>
+        <div class="ao-demo">
+          <div class="ao-window">
+            <div class="ao-bar"><span class="ao-dots"><span></span><span></span><span></span></span><span class="ao-bar-title">COMPETITIVE PROBE — SAMPLE</span></div>
+            <div class="ao-body">
+              <div class="audit-find"><span class="ao-tag warn">VISIBILITY</span>Asked 8 buyer questions, AI assistants name you once — two competitors own the answers</div>
+              <div class="audit-find"><span class="ao-tag money">MOVES</span>Competitor B added online booking + AI chat in Q2 — closing the convenience gap you led on</div>
+              <div class="audit-find"><span class="ao-tag deal">OPENING</span>Nobody in your metro owns the "same-day quote" position — play 2 takes it</div>
+              <div class="ao-item"><span class="ao-tag deal">VERIFIED</span><span class="what">Every claim → source → status, logged in the appendix</span></div>
             </div>
           </div>
         </div>
@@ -238,7 +319,7 @@
     <div class="container">
       <div class="section-head center">
         <div class="eyebrow">How It Works</div>
-        <h2>45 minutes of your time. 48 hours to answers.</h2>
+        <h2>A guided discovery. Then the engine goes to work.</h2>
       </div>
       <div class="steps">
         <div class="step">
@@ -248,23 +329,23 @@
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <h3>45-minute guided discovery</h3>
-          <p>A structured conversation about how your business actually runs. No prep needed.</p>
+          <h3>Guided discovery</h3>
+          <p>A structured conversation about how your business actually runs — including the question that finds the constraint: if you had 10× the business tomorrow, what breaks first?</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
           <h3>The engine goes to work</h3>
-          <p>Your operation gets mapped against tools, benchmarks, and your website teardown.</p>
+          <p>Your operation mapped against tools, benchmarks, your market, and your digital presence. Strategic tier adds the full competitor and market sweep, every claim verified.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
-          <h3>Your plan, in 48 hours</h3>
-          <p>Score, audit, tools, map, ROI — a plan you could hand to any implementer. We just hope it's us.</p>
+          <h3>Your plan, delivered</h3>
+          <p>Snapshot in about 3 business days; Strategic in 2–3 weeks. Either way: a plan you could hand to any implementer. We just hope it's us.</p>
         </div>
       </div>
       <div class="ao-guard">
-        <h3>$1,950 flat. Yours to keep either way.</h3>
-        <p>The assessment stands on its own — no obligation to build anything with us. If the honest answer is "AI isn't worth it for you yet," that's what the report will say.</p>
+        <h3>Yours to keep either way — and the fee never dies.</h3>
+        <p>The assessment stands on its own; there's no obligation to build anything with us. If the honest answer is "AI isn't worth it for you yet," that's what the report will say. And if you do continue — Snapshot fees credit toward the Strategic tier or a Wedge Sprint, and Strategic fees credit toward implementation.</p>
       </div>
     </div>
   </section>
@@ -288,6 +369,21 @@
 
         <form id="intake" action="https://mc.stratum137.com/api/leads/intake?token=83da63ef9391736c9ded936c2bb53847" method="POST" class="intake-form">
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form-section">
+            <div class="form-legend">What are you after?</div>
+            <div class="field-grid">
+              <label class="full">Which fits where you are today? *
+                <select name="tier" required>
+                  <option value="">Choose one…</option>
+                  <option value="Snapshot ($500)">The $500 Snapshot — find my top plays fast</option>
+                  <option value="Strategic ($5-10K)">The Strategic Assessment — full roadmap, competitor audit, financial model</option>
+                  <option value="Advisory session">Just an advisory session first — pick David's brain</option>
+                  <option value="Not sure">Not sure — recommend the right starting point</option>
+                </select>
+              </label>
+            </div>
+          </div>
 
           <div class="form-section">
             <div class="form-legend">Who you are</div>
@@ -440,12 +536,12 @@
     </div>
     <div class="footer-links">
       <a href="index.html">Home</a>
-      <a href="ai-office.html">The AI Office</a>
-      <a href="understanding-ai.html">Understanding AI</a>
+      <a href="services.html">Services</a>
       <a href="assessment.html">Assessment</a>
-      <a href="ai-engine.html">AI Revenue Engine</a>
-      <a href="content-growth.html">Content Growth Engine</a>
-      <a href="custom-work.html">Custom Work</a>
+      <a href="ai-officer.html">Fractional AI Officer</a>
+      <a href="sprints.html">Wedge Sprints</a>
+      <a href="custom-work.html">Custom Work &amp; Advisory</a>
+      <a href="understanding-ai.html">Understanding AI</a>
       <a href="defense-manufacturing.html">Defense Manufacturing</a>
       <a href="mailto:david@stratum137.com">david@stratum137.com</a>
     </div>
