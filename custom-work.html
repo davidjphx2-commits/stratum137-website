@@ -80,6 +80,64 @@
 @media (max-width: 1024px) { .cw-build-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .cw-build-grid { grid-template-columns: 1fr; } }
 
+/* ── Case Study 03: websites ── */
+.cw-sites { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 32px; margin-top: 8px; }
+@media (max-width: 1024px) { .cw-sites { grid-template-columns: 1fr; gap: 48px; } }
+.cw-site { display: flex; flex-direction: column; }
+.cw-stage { position: relative; padding: 0 12% 34px 0; }
+.cw-browser {
+  border-radius: 12px; overflow: hidden; background: #0b1017;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 26px 70px rgba(0,0,0,0.55), 0 0 48px rgba(45, 212, 191, 0.07);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.cw-stage:hover .cw-browser { border-color: var(--teal-dim); }
+.cw-browser-bar {
+  display: flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px;
+  background: #121a25; border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.cw-browser-bar span { width: 10px; height: 10px; border-radius: 50%; background: #2a3441; }
+.cw-browser-bar span:nth-child(1) { background: #ff5f57; } .cw-browser-bar span:nth-child(2) { background: #febc2e; } .cw-browser-bar span:nth-child(3) { background: #28c840; }
+.cw-url {
+  flex: 1; margin-left: 10px; height: 20px; line-height: 20px; border-radius: 6px; padding: 0 10px;
+  background: #0b1017; color: var(--text-faint); font-size: 0.72rem; letter-spacing: 0.02em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cw-browser-view { position: relative; height: 400px; overflow: hidden; cursor: zoom-in; }
+.cw-browser-view img { display: block; width: 100%; height: auto; transform: translateY(0); transition: transform 7s cubic-bezier(.4,.05,.3,1); }
+.cw-stage:hover .cw-browser-view img { transform: translateY(calc(-100% + 400px)); }
+.cw-hint {
+  position: absolute; left: 12px; bottom: 12px; z-index: 2; pointer-events: none;
+  font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim);
+  background: rgba(8, 12, 18, 0.78); border: 1px solid var(--border); border-radius: 999px; padding: 5px 10px;
+  transition: opacity .3s ease;
+}
+.cw-stage:hover .cw-hint { opacity: 0; }
+.cw-phone {
+  position: absolute; right: 0; bottom: 0; width: 24%; min-width: 118px; max-width: 168px;
+  border-radius: 22px; padding: 6px; background: #0b1017; border: 1px solid var(--border-strong);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.6); overflow: hidden; z-index: 3; cursor: zoom-in;
+  transition: transform .25s ease, border-color .25s ease;
+}
+.cw-phone img { display: block; width: 100%; height: auto; border-radius: 16px; }
+.cw-phone:hover { transform: translateY(-4px); border-color: var(--teal-dim); }
+.cw-site-body { padding-top: 22px; }
+.cw-site-body h3 { font-size: 1.35rem; margin-bottom: 4px; }
+.cw-site-where { font-size: 0.8rem; color: var(--text-faint); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+.cw-site-body p { color: var(--text-dim); margin-bottom: 14px; }
+.cw-site-points { list-style: none; padding: 0; margin: 0 0 20px; }
+.cw-site-points li { position: relative; padding-left: 20px; margin-bottom: 8px; color: var(--text-dim); font-size: 0.95rem; }
+.cw-site-points li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 8px; height: 8px; border-radius: 2px; background: var(--teal-dim); }
+@media (max-width: 540px) {
+  .cw-stage { padding-right: 0; padding-bottom: 0; }
+  .cw-phone { display: none; }
+  .cw-browser-view { height: 300px; }
+  .cw-stage:hover .cw-browser-view img { transform: translateY(calc(-100% + 300px)); }
+}
+@media (prefers-reduced-motion: reduce) { .cw-browser-view img { transition: none; } }
+/* tall full-page images in the lightbox scroll instead of squashing */
+.cw-lightbox.tall { align-items: flex-start; overflow-y: auto; }
+.cw-lightbox.tall img { max-height: none; width: min(1100px, 100%); }
 /* lightbox */
 .cw-lightbox {
   position: fixed; inset: 0; z-index: 100; display: none;
@@ -133,7 +191,7 @@
       <div class="eyebrow">Custom Work &amp; Advisory — Built for One Business: Yours</div>
       <h1>When off-the-shelf won't cut it,<br><span class="accent">we build it.</span></h1>
       <p class="hero-sub">Some problems don't have a product you can buy. These are real systems we designed and built for real businesses — platforms their teams log into every morning. And when what you need first is direction, not software — <a href="#advisory" style="color:var(--teal)">book time with David directly</a>.</p>
-      <div class="cw-note">Client logos, names, and identifying details in the screenshots below are blurred or replaced with sample data to protect client confidentiality.</div>
+      <div class="cw-note">Client logos, names, and identifying details in the platform screenshots below are blurred or replaced with sample data to protect client confidentiality. The websites in Case Study 03 are public and shown as they appear live.</div>
     </div>
     <div class="hero-glow"></div>
   </section>
@@ -215,6 +273,76 @@
         <span class="cw-stat"><strong>Deadline radar</strong> — never miss a window</span>
         <span class="cw-stat"><strong>Incumbent intel</strong> on upcoming re-bids</span>
         <span class="cw-stat"><strong>Action calls</strong> — what to do, per bid</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cw-case" id="websites">
+    <div class="container">
+      <div class="cw-case-head">
+        <span class="cw-client">Clients: A Psychology Practice &middot; A Lighting Contractor</span>
+        <div class="eyebrow">Case Study 03 &mdash; Websites</div>
+        <h2>Websites that show, not tell &mdash; designed, written, built, and hosted by the same team that does your AI.</h2>
+        <p>A website is usually the first thing we build for a client, because it's the first thing their customers see. No page builders, no templates. Each site is designed around what the business actually does, written in the owner's voice, hand-coded so it loads fast, and hosted on our own servers &mdash; so when something needs changing, there's one call to make.</p>
+        <p>Two recent examples, shown exactly as they're live today. Hover over a screen to scroll the page; click any screen to see it full size.</p>
+      </div>
+
+      <div class="cw-sites">
+        <article class="cw-site">
+          <div class="cw-stage">
+            <div class="cw-browser">
+              <div class="cw-browser-bar"><span></span><span></span><span></span><div class="cw-url">thereynoldsinstitute.com</div></div>
+              <div class="cw-browser-view">
+                <img src="assets/img/custom/sites/reynolds-desktop.webp" class="cw-site-shot" alt="Full home page of The Reynolds Institute website: editorial typography, warm interior photography, four service cards, founder essay, and consultation call to action" loading="lazy" width="1440" height="4125">
+                <span class="cw-hint">Hover to scroll &middot; click to enlarge</span>
+              </div>
+            </div>
+            <div class="cw-phone"><img src="assets/img/custom/sites/reynolds-mobile.webp" class="cw-site-shot" alt="The Reynolds Institute home page on a phone" loading="lazy" width="520" height="1125"></div>
+          </div>
+          <div class="cw-site-body">
+            <h3>The Reynolds Institute</h3>
+            <div class="cw-site-where">Psychology practice &middot; Scottsdale, Arizona</div>
+            <p>A practice serving neurodivergent adults needed a site that felt like the practice itself: calm, credible, and nothing like a directory listing. Editorial typography, warm interior photography, and a clear path to booking on every page.</p>
+            <ul class="cw-site-points">
+              <li>Four service lines, each with its own page and its own call to action</li>
+              <li>The founder's essay and philosophy given room to breathe, not buried under stock photos</li>
+              <li>Schema markup, sitemap, and search indexing handled at launch</li>
+            </ul>
+            <a href="https://thereynoldsinstitute.com" target="_blank" rel="noopener" class="btn btn-ghost">Visit the live site &rarr;</a>
+          </div>
+        </article>
+
+        <article class="cw-site">
+          <div class="cw-stage">
+            <div class="cw-browser">
+              <div class="cw-browser-bar"><span></span><span></span><span></span><div class="cw-url">bbl.stratum137.com</div></div>
+              <div class="cw-browser-view">
+                <img src="assets/img/custom/sites/bbl-desktop.webp" class="cw-site-shot" alt="Full home page of the Briggs Brothers Lighting website: interactive lighting visualizer over a desert home at dusk, residential and commercial service cards, and quote call to action" loading="lazy" width="1440" height="2418">
+                <span class="cw-hint">Hover to scroll &middot; click to enlarge</span>
+              </div>
+            </div>
+            <div class="cw-phone"><img src="assets/img/custom/sites/bbl-mobile.webp" class="cw-site-shot" alt="Briggs Brothers Lighting home page on a phone, with the lighting visualizer switches" loading="lazy" width="520" height="1125"></div>
+          </div>
+          <div class="cw-site-body">
+            <h3>Briggs Brothers Lighting</h3>
+            <div class="cw-site-where">Landscape &amp; holiday lighting contractor &middot; Phoenix metro</div>
+            <p>A lighting contractor sells something you can't picture until it's installed. So the home page lets you install it: flip the switches and watch a home light up in seven colour schemes, at sunset or full night, before you ever ask for a quote.</p>
+            <ul class="cw-site-points">
+              <li>Interactive lighting visualizer built from scratch &mdash; no plugin does this</li>
+              <li>Residential and commercial galleries, customer reviews, and a quote form</li>
+              <li>The owner's own drone footage, cut and compressed to load in a blink</li>
+            </ul>
+            <a href="https://bbl.stratum137.com" target="_blank" rel="noopener" class="btn btn-ghost">Visit the live site &rarr;</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="cw-stats">
+        <span class="cw-stat"><strong>Hand-coded</strong> &mdash; no WordPress, no page builder, nothing to patch</span>
+        <span class="cw-stat"><strong>Hosted by us</strong> &mdash; one call when you want a change</span>
+        <span class="cw-stat"><strong>Mobile-first</strong> &mdash; built for the phone in your customer's hand</span>
+        <span class="cw-stat"><strong>Search-ready</strong> &mdash; schema, sitemap, fast loads</span>
+        <span class="cw-stat"><strong>Interactive when it sells</strong> &mdash; visualizers, calculators, configurators</span>
       </div>
     </div>
   </section>
@@ -348,10 +476,11 @@
   }
   var box = document.getElementById('lightbox');
   var boxImg = box.querySelector('img');
-  document.querySelectorAll('.cw-shot').forEach(function (img) {
+  document.querySelectorAll('.cw-shot, .cw-site-shot').forEach(function (img) {
     img.addEventListener('click', function () {
       boxImg.src = img.src;
       boxImg.alt = img.alt;
+      box.classList.toggle('tall', img.naturalHeight > img.naturalWidth * 1.2);
       box.classList.add('open');
       box.setAttribute('aria-hidden', 'false');
     });
