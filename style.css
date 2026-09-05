@@ -1068,7 +1068,9 @@ a { color: inherit; text-decoration: none; }
 }
 @keyframes bgDrift { from { transform: scale(1); } to { transform: scale(1.07); } }
 @media (prefers-reduced-motion: reduce) { .page-bg img { animation: none; } }
-main, .site-header { position: relative; z-index: 1; }
+/* lift page content above .page-bg. Header keeps its own sticky/z-index:50 rule —
+   listing .site-header here overrode it (z 1 == main, so main painted over the mobile nav). */
+main, .announce-bar { position: relative; z-index: 1; }
 
 /* glass panel for feature renders */
 .render-panel {
