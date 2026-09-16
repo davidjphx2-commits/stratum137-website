@@ -105,6 +105,8 @@
 <!--
   FORM ENDPOINT: posts to Mission Control leads intake API (Agent Inbox).
 -->
+<!-- analytics: first-party, cookieless (Umami on Stratum 137 infra) -->
+<script defer src="/x/s.js" data-website-id="5aa712d6-71df-41a2-8259-e4613404477b" data-domains="stratum137.com"></script>
 </head>
 <body>
 
@@ -519,7 +521,7 @@
             </label>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-lg">Send it — get my assessment started</button>
+          <button type="submit" class="btn btn-primary btn-lg" data-umami-event="form-submit">Send it — get my assessment started</button>
           <p class="intake-fineprint">We reply within one business day. Your answers stay between us — no lists, no spam.</p>
         </form>
       </div>
@@ -543,7 +545,7 @@
       <a href="custom-work.html">Custom Work &amp; Advisory</a>
       <a href="understanding-ai.html">Understanding AI</a>
       <a href="defense-manufacturing.html">Defense Manufacturing</a>
-      <a href="mailto:david@stratum137.com">david@stratum137.com</a>
+      <a href="mailto:david@stratum137.com" data-umami-event="email-click">david@stratum137.com</a>
     </div>
   </div>
   <div class="container footer-note">
