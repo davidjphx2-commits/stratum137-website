@@ -1622,3 +1622,5 @@ main, .announce-bar { position: relative; z-index: 1; }
 .footer-note details summary::after { color: #ffffff; }
 .footer-mark { width: 40px; height: 40px; padding: 4px; border-radius: 10px; background: #0b1020; filter: none; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12); }
 .site-footer :focus-visible { outline-color: #ffffff; }
+
+@media (max-width: 480px) { .btn { white-space: normal; text-align: center; } }

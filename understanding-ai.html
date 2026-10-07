@@ -31,20 +31,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20260904">
+<link rel="stylesheet" href="style.css?v=20261007">
 <style>
 /* ===== Understanding-AI page-scoped styles (ua-*) ===== */
 .ua-hero { padding: 160px 0 90px; text-align: center; position: relative; }
-.ua-hero h1 { font-size: clamp(2.1rem, 5.2vw, 3.2rem); line-height: 1.15; font-family: var(--font-display); text-shadow: 0 2px 24px rgba(6,9,16,0.95), 0 0 60px rgba(6,9,16,0.7); }
-.ua-hero .lead { margin: 22px auto 0; max-width: 720px; color: var(--text); text-shadow: 0 1px 14px rgba(6,9,16,0.95), 0 0 40px rgba(6,9,16,0.8); }
-.ua-hero .eyebrow { text-shadow: 0 1px 10px rgba(6,9,16,0.9); }
+.ua-hero h1 { font-size: clamp(2.1rem, 5.2vw, 3.2rem); line-height: 1.15; font-family: var(--font-display); }
+.ua-hero .lead { margin: 22px auto 0; max-width: 720px; color: var(--text); }
+.ua-hero .eyebrow { }
 
 /* stat tiles */
 .ua-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 54px; }
 @media (max-width: 960px) { .ua-stats { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .ua-stats { grid-template-columns: 1fr; } }
 .ua-stat {
-  background: rgba(14,20,32,0.72); backdrop-filter: blur(6px);
+  background: #ffffff; backdrop-filter: blur(6px);
   border: 1px solid var(--border); border-radius: var(--radius);
   padding: 26px 24px; text-align: left;
 }
@@ -65,7 +65,7 @@
   padding: 16px 20px; margin-bottom: 12px;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.ua-layer:hover { transform: translateX(6px); border-color: var(--border-strong); box-shadow: 0 8px 30px rgba(45,212,191,0.10); }
+.ua-layer:hover { transform: translateX(6px); border-color: var(--border-strong); box-shadow: var(--shadow-md); }
 .ua-layer h4 { font-family: var(--font-display); font-size: 1.02rem; }
 .ua-layer h4 span { color: var(--teal-dim); font-size: 0.78rem; letter-spacing: 0.12em; margin-right: 10px; }
 .ua-layer p { color: var(--text-dim); font-size: 0.88rem; margin-top: 4px; }
@@ -74,7 +74,7 @@
 .ua-vs { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 44px; }
 @media (max-width: 860px) { .ua-vs { grid-template-columns: 1fr; } }
 .ua-vs-col { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px 28px; }
-.ua-vs-col.brain { border-color: var(--border-strong); box-shadow: 0 0 44px rgba(45,212,191,0.08); }
+.ua-vs-col.brain { border-color: var(--border-strong); box-shadow: var(--shadow-md); }
 .ua-vs-col h3 { font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 4px; }
 .ua-vs-col .sub { color: var(--text-faint); font-size: 0.85rem; margin-bottom: 16px; }
 .ua-vs-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
@@ -101,9 +101,9 @@
 .ua-cap-row .cap-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .ua-cap-row h4 { font-size: 0.96rem; font-weight: 600; }
 .ua-cap-row .cap-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); white-space: nowrap; }
-.ua-cap-row .cap-tag.watch { color: #fbbf24; }
+.ua-cap-row .cap-tag.watch { color: #b45309; }
 .ua-cap-row p { color: var(--text-dim); font-size: 0.86rem; margin-top: 3px; }
-.ua-meter { height: 6px; border-radius: 999px; background: rgba(255,255,255,0.06); margin-top: 10px; overflow: hidden; }
+.ua-meter { height: 6px; border-radius: 999px; background: #eceee9; margin-top: 10px; overflow: hidden; }
 .ua-meter i {
   display: block; height: 100%; border-radius: 999px;
   background: linear-gradient(90deg, #14a396, var(--teal));
