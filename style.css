@@ -1363,7 +1363,7 @@ main, .announce-bar { position: relative; z-index: 1; }
 .phone-view { border-radius: 23px; overflow: hidden; height: 370px; }
 .phone-view img { display: block; width: 100%; height: auto; }
 
-.devices-cap { margin-top: 16px; font-size: 0.84rem; color: var(--text-faint); }
+.devices-cap { margin-top: 16px; max-width: calc(100% - 200px); font-size: 0.84rem; color: var(--text-faint); }
 .devices-cap a { color: var(--teal); font-weight: 600; }
 
 @media (max-width: 960px) { .web-feature { grid-template-columns: 1fr; gap: 48px; } }
@@ -1624,3 +1624,5 @@ main, .announce-bar { position: relative; z-index: 1; }
 .site-footer :focus-visible { outline-color: #ffffff; }
 
 @media (max-width: 480px) { .btn { white-space: normal; text-align: center; } }
+
+@media (max-width: 640px) { .devices-cap { max-width: calc(100% - 140px); } }
