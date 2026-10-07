@@ -1604,3 +1604,21 @@ main, .announce-bar { position: relative; z-index: 1; }
 /* two-tone headlines: the continuation in muted ink, same size and weight */
 .h-head h2 .mute, .founder-copy h2 .mute, .cta-card h2 .mute, .web-feature h2 .mute { color: rgba(18, 25, 54, 0.42); }
 .h-hero h1, .h-head h2, .founder-copy h2, .cta-card h2, .web-feature h2 { font-weight: 500; }
+
+/* footer: deep brand teal with white type (white on #0a6b61 = 6.1:1) */
+.site-footer {
+  background: #0a6b61;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  color: rgba(255, 255, 255, 0.86);
+}
+.footer-brand { color: #ffffff; }
+.footer-links { color: rgba(255, 255, 255, 0.88); }
+.footer-links a:hover { color: #ffffff; text-decoration: underline; text-underline-offset: 4px; }
+.footer-note { color: rgba(255, 255, 255, 0.78); border-top-color: rgba(255, 255, 255, 0.18); }
+.footer-note details summary { color: #ffffff; }
+.footer-note details summary::after { color: #ffffff; }
+.footer-mark { width: 40px; height: 40px; padding: 4px; border-radius: 10px; background: #0b1020; filter: none; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12); }
+.site-footer :focus-visible { outline-color: #ffffff; }
