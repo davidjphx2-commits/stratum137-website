@@ -14,3 +14,22 @@ sourced via Openverse search on 2026-07-05. Verify links before any reuse beyond
 | outcome-reviews.jpg | "House Home" | https://stocksnap.io/photo/house-home-LJ515CPAKI |
 
 Crops/tints/overlays applied in-repo. Originals live at the source links.
+
+## Arizona photography (assets/img/az/)
+
+Licensed by David Jones from **Dreamstime** (website license, purchased 2026-10). Not CC0: do not reuse
+outside stratum137.com without checking the license terms. Originals kept by David; resized to WebP in-repo.
+
+| File | Subject | Dreamstime ID |
+|------|---------|---------------|
+| saguaro-sunset-*.webp | Saguaro at sunset, Sonoran Desert | 171831439 |
+| waterfront-dusk-*.webp | Arizona Canal, Scottsdale Waterfront, dusk | 31513357 |
+| waterfront-flowers-*.webp | Arizona Canal, Scottsdale Waterfront, red flowers | 210591562 |
+| oldtown-fountain-*.webp | Horse fountain, Old Town Scottsdale | 128149187 |
+| oldtown-street-*.webp | Storefronts, Old Town Scottsdale | 68291579 |
+| camelback-*.webp | Camelback Mountain at sunset | 115772463 |
+| wild-mustang-*.webp | Wild mustang, Arizona desert | 104093436 |
+| monument-valley-*.webp | Monument Valley at sunset (footer) | 39640881 |
+
+`founder-desk-1360.webp` and `founder-tempe-*.webp` are portraits of David Jones generated/retouched by
+David in Magnific (own likeness, own account), 2026-10-11.

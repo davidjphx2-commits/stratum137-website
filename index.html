@@ -49,7 +49,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261007">
+<link rel="stylesheet" href="style.css?v=20261011">
 <meta name="theme-color" content="#0b1020">
 <script>document.documentElement.classList.add('js')</script>
 <!-- analytics: first-party, cookieless (Umami on Stratum 137 infra) -->
@@ -92,7 +92,8 @@
         <div class="h-hero-grid">
           <div class="h-hero-copy">
             <div class="eyebrow" data-reveal>AI for small businesses — diagnosis first, then the fix</div>
-            <h1 data-reveal style="--d:.08s">Find where AI pays.<br><span class="accent">Prove it. Keep it current.</span></h1>
+            <h1 data-reveal style="--d:.08s"><span class="accent">Arizona’s</span><br>AI agency.</h1>
+            <p class="h-hero-kicker" data-reveal style="--d:.12s">Find where AI pays. Prove it. Keep it current.</p>
             <p class="h-hero-sub" data-reveal style="--d:.16s">95% of AI pilots fail — because they automate the wrong thing. We start by finding the constraint in <em>your</em> business, fix it against a number we agree on before you pay, and keep it working as the AI industry changes under everyone's feet.</p>
             <div class="h-hero-actions" data-reveal style="--d:.24s">
               <a href="assessment.html" class="btn btn-primary btn-lg">Start with the $500 Snapshot <span class="arr" aria-hidden="true">→</span></a>
@@ -105,40 +106,28 @@
             </ul>
           </div>
 
-          <div class="report-wrap" data-reveal style="--d:.2s">
-            <div class="report" data-anim role="img" aria-label="Sample AI Business Assessment snapshot: overall readiness 6.4 out of 10 across seven dimensions, a security flag, and two quantified wedges.">
-              <div class="report-bar">
-                <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
-                <span class="ttl">AI Readiness Snapshot</span>
-                <span class="tag">Sample client</span>
-              </div>
-              <div class="report-body">
-                <div class="report-top">
-                  <div class="score" data-anim style="--v:.64">
-                    <svg viewBox="0 0 104 104" aria-hidden="true"><circle class="trk" cx="52" cy="52" r="46" fill="none" stroke-width="9"/><circle class="val" cx="52" cy="52" r="46" fill="none" stroke-width="9"/></svg>
-                    <div class="score-num"><b data-count="6.4">6.4</b><small>OVERALL / 10</small></div>
-                  </div>
-                  <ul class="dims">
-                    <li><span>Process maturity</span><span class="bar"><i style="--v:.78;--dl:.30s"></i></span><b>7.8</b></li>
-                    <li><span>Data readiness</span><span class="bar"><i style="--v:.62;--dl:.38s"></i></span><b>6.2</b></li>
-                    <li><span>Tool stack fit</span><span class="bar"><i style="--v:.71;--dl:.46s"></i></span><b>7.1</b></li>
-                    <li class="lo"><span>Security posture</span><span class="bar"><i style="--v:.38;--dl:.54s"></i></span><b>3.8</b></li>
-                    <li><span>Team adoption</span><span class="bar"><i style="--v:.66;--dl:.62s"></i></span><b>6.6</b></li>
-                    <li><span>Budget headroom</span><span class="bar"><i style="--v:.74;--dl:.70s"></i></span><b>7.4</b></li>
-                    <li class="mid"><span>Customer experience</span><span class="bar"><i style="--v:.59;--dl:.78s"></i></span><b>5.9</b></li>
-                  </ul>
-                </div>
-                <div class="report-flag"><span aria-hidden="true">!</span><span><b>Security first:</b> fix access boundaries before AI touches customer data — 2-week quick win.</span></div>
-                <div class="report-wedges">
-                  <div><span><span class="w">Wedge 1</span>Packets checked complete before review</span><b>~$14k/yr</b></div>
-                  <div><span><span class="w">Wedge 2</span>Every lead answered inside the hour</span><b>~$21k/yr</b></div>
-                </div>
-              </div>
-            </div>
-            <div class="report-chip" aria-hidden="true">
-              <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
-              <div><strong>90-day plan</strong><span>Ranked by fastest payback</span></div>
-            </div>
+          <div class="az-show" data-reveal style="--d:.2s" aria-roledescription="carousel" aria-label="Arizona, where we work">
+              <figure class="az-slide is-on" style="--pos:70% 50%">
+                <img src="assets/img/az/saguaro-sunset-1200.webp" srcset="assets/img/az/saguaro-sunset-1200.webp 1200w, assets/img/az/saguaro-sunset-2400.webp 2400w" sizes="(max-width: 1020px) 100vw, 46vw" alt="Saguaro silhouetted against a magenta Arizona sunset" fetchpriority="high">
+                <figcaption class="az-tag"><span aria-hidden="true"></span>Sonoran Desert</figcaption>
+              </figure>
+              <figure class="az-slide" style="--pos:58% 50%" aria-hidden="true">
+                <img src="assets/img/az/waterfront-dusk-1200.webp" srcset="assets/img/az/waterfront-dusk-1200.webp 1200w, assets/img/az/waterfront-dusk-2400.webp 2400w" sizes="(max-width: 1020px) 100vw, 46vw" alt="Arizona Canal at the Scottsdale Waterfront at dusk" loading="lazy">
+                <figcaption class="az-tag"><span aria-hidden="true"></span>Scottsdale Waterfront</figcaption>
+              </figure>
+              <figure class="az-slide" style="--pos:56% 50%" aria-hidden="true">
+                <img src="assets/img/az/oldtown-fountain-1200.webp" srcset="assets/img/az/oldtown-fountain-1200.webp 1200w, assets/img/az/oldtown-fountain-2400.webp 2400w" sizes="(max-width: 1020px) 100vw, 46vw" alt="Horse fountain in Old Town Scottsdale" loading="lazy">
+                <figcaption class="az-tag"><span aria-hidden="true"></span>Old Town Scottsdale</figcaption>
+              </figure>
+              <figure class="az-slide" style="--pos:62% 50%" aria-hidden="true">
+                <img src="assets/img/az/camelback-1200.webp" srcset="assets/img/az/camelback-1200.webp 1200w, assets/img/az/camelback-2400.webp 2400w" sizes="(max-width: 1020px) 100vw, 46vw" alt="Camelback Mountain under a storm-lit sunset" loading="lazy">
+                <figcaption class="az-tag"><span aria-hidden="true"></span>Camelback Mountain</figcaption>
+              </figure>
+              <figure class="az-slide" style="--pos:42% 50%" aria-hidden="true">
+                <img src="assets/img/az/wild-mustang-1200.webp" srcset="assets/img/az/wild-mustang-1200.webp 1200w, assets/img/az/wild-mustang-2400.webp 2400w" sizes="(max-width: 1020px) 100vw, 46vw" alt="Wild mustang running through the Arizona desert" loading="lazy">
+                <figcaption class="az-tag"><span aria-hidden="true"></span>Sonoran Desert</figcaption>
+              </figure>
+            <div class="az-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
           </div>
         </div>
       </div>
@@ -187,6 +176,11 @@
     </div>
   </section>
 
+  <figure class="az-band" data-reveal>
+    <img src="assets/img/az/oldtown-street-1200.webp" srcset="assets/img/az/oldtown-street-1200.webp 1200w, assets/img/az/oldtown-street-2400.webp 2400w" sizes="(max-width: 1260px) 100vw, 1180px" alt="Local shops along a street in Old Town Scottsdale" loading="lazy">
+    <figcaption class="az-tag"><span aria-hidden="true"></span>Old Town Scottsdale</figcaption>
+  </figure>
+
   <!-- ============ LADDER ============ -->
   <section class="section ladder" id="ladder">
     <div class="container">
@@ -232,6 +226,49 @@
           <div class="rung-foot"><span class="rung-price">From $1,500<small>per month</small></span><span class="text-link">AI Officer →</span></div>
         </a>
       </div>
+      <div class="snap-feature">
+        <div class="snap-copy" data-reveal>
+          <div class="eyebrow">Sample client</div>
+          <h3>This is what a $500 Snapshot looks like.</h3>
+          <a href="assessment.html" class="text-link">See the Assessment →</a>
+        </div>
+  <div class="report-wrap" data-reveal style="--d:.1s">
+            <div class="report" data-anim role="img" aria-label="Sample AI Business Assessment snapshot: overall readiness 6.4 out of 10 across seven dimensions, a security flag, and two quantified wedges.">
+              <div class="report-bar">
+                <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span class="ttl">AI Readiness Snapshot</span>
+                <span class="tag">Sample client</span>
+              </div>
+              <div class="report-body">
+                <div class="report-top">
+                  <div class="score" data-anim style="--v:.64">
+                    <svg viewBox="0 0 104 104" aria-hidden="true"><circle class="trk" cx="52" cy="52" r="46" fill="none" stroke-width="9"/><circle class="val" cx="52" cy="52" r="46" fill="none" stroke-width="9"/></svg>
+                    <div class="score-num"><b data-count="6.4">6.4</b><small>OVERALL / 10</small></div>
+                  </div>
+                  <ul class="dims">
+                    <li><span>Process maturity</span><span class="bar"><i style="--v:.78;--dl:.30s"></i></span><b>7.8</b></li>
+                    <li><span>Data readiness</span><span class="bar"><i style="--v:.62;--dl:.38s"></i></span><b>6.2</b></li>
+                    <li><span>Tool stack fit</span><span class="bar"><i style="--v:.71;--dl:.46s"></i></span><b>7.1</b></li>
+                    <li class="lo"><span>Security posture</span><span class="bar"><i style="--v:.38;--dl:.54s"></i></span><b>3.8</b></li>
+                    <li><span>Team adoption</span><span class="bar"><i style="--v:.66;--dl:.62s"></i></span><b>6.6</b></li>
+                    <li><span>Budget headroom</span><span class="bar"><i style="--v:.74;--dl:.70s"></i></span><b>7.4</b></li>
+                    <li class="mid"><span>Customer experience</span><span class="bar"><i style="--v:.59;--dl:.78s"></i></span><b>5.9</b></li>
+                  </ul>
+                </div>
+                <div class="report-flag"><span aria-hidden="true">!</span><span><b>Security first:</b> fix access boundaries before AI touches customer data — 2-week quick win.</span></div>
+                <div class="report-wedges">
+                  <div><span><span class="w">Wedge 1</span>Packets checked complete before review</span><b>~$14k/yr</b></div>
+                  <div><span><span class="w">Wedge 2</span>Every lead answered inside the hour</span><b>~$21k/yr</b></div>
+                </div>
+              </div>
+            </div>
+            <div class="report-chip" aria-hidden="true">
+              <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+              <div><strong>90-day plan</strong><span>Ranked by fastest payback</span></div>
+            </div>
+          </div>
+      </div>
+
       <p class="ladder-note">Want straight answers first? <a class="text-link" href="custom-work.html">A $300 strategy session with David →</a></p>
     </div>
   </section>
@@ -335,11 +372,16 @@
     </div>
   </section>
 
+  <figure class="az-band az-band-founder" data-reveal>
+    <img src="assets/img/az/founder-desk-1360.webp" width="1360" height="768" alt="David Jones at his desk, with the desert and a saguaro outside the window" loading="lazy">
+    <figcaption class="az-tag"><span aria-hidden="true"></span>Scottsdale, Arizona</figcaption>
+  </figure>
+
   <!-- ============ FOUNDER ============ -->
   <section class="section" id="about">
     <div class="container founder-grid">
       <figure class="founder-photo" data-reveal>
-        <img src="assets/headshot.png" alt="David Jones, founder of Stratum 137" loading="lazy">
+        <img src="assets/img/az/founder-tempe-720.webp" srcset="assets/img/az/founder-tempe-720.webp 720w, assets/img/az/founder-tempe-1080.webp 1080w" sizes="(max-width: 1020px) 340px, 360px" width="720" height="954" alt="David Jones, founder of Stratum 137, with Tempe Town Lake behind him" loading="lazy">
         <figcaption><b>David Jones</b>Founder · Scottsdale, Arizona</figcaption>
       </figure>
       <div class="founder-copy" data-reveal style="--d:.1s">
@@ -457,6 +499,11 @@
     </div>
   </section>
 
+  <figure class="az-band" data-reveal>
+    <img src="assets/img/az/waterfront-flowers-1200.webp" srcset="assets/img/az/waterfront-flowers-1200.webp 1200w, assets/img/az/waterfront-flowers-2400.webp 2400w" sizes="(max-width: 1260px) 100vw, 1180px" alt="Red flowers above the Arizona Canal at the Scottsdale Waterfront" loading="lazy">
+    <figcaption class="az-tag"><span aria-hidden="true"></span>Scottsdale Waterfront</figcaption>
+  </figure>
+
   <!-- ============ CTA ============ -->
   <section class="section" id="contact" style="padding-top:24px">
     <div class="container">
@@ -503,6 +550,6 @@
   </div>
 </footer>
 
-<script src="site.js" defer></script>
+<script src="site.js?v=20261011" defer></script>
 </body>
 </html>

@@ -19,6 +19,31 @@
     });
   }
 
+  // Arizona hero slideshow: crossfade every 6s, pause when hidden, still under reduced motion.
+  var show = document.querySelector('.az-show');
+  if (show) {
+    var slides = show.querySelectorAll('.az-slide');
+    var dots = show.querySelectorAll('.az-dots i');
+    var cur = 0, timer = null;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var go = function (n) {
+      slides[cur].classList.remove('is-on');
+      slides[cur].setAttribute('aria-hidden', 'true');
+      if (dots[cur]) dots[cur].classList.remove('on');
+      cur = n % slides.length;
+      slides[cur].classList.add('is-on');
+      slides[cur].removeAttribute('aria-hidden');
+      if (dots[cur]) dots[cur].classList.add('on');
+    };
+    var start = function () { if (!timer) timer = setInterval(function () { go(cur + 1); }, 6000); };
+    var stop = function () { clearInterval(timer); timer = null; };
+    if (dots[0]) dots[0].classList.add('on');
+    if (!still && slides.length > 1) {
+      start();
+      document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+    }
+  }
+
   var targets = document.querySelectorAll('[data-reveal], [data-anim]');
   if (!('IntersectionObserver' in window)) {
     targets.forEach(function (el) { el.classList.add('in'); });
