@@ -31,5 +31,5 @@ outside stratum137.com without checking the license terms. Originals kept by Dav
 | wild-mustang-*.webp | Wild mustang, Arizona desert | 104093436 |
 | monument-valley-*.webp | Monument Valley at sunset (footer) | 39640881 |
 
-`founder-desk-1360.webp` and `founder-tempe-*.webp` are portraits of David Jones generated/retouched by
+`founder-desk-*.webp` and `founder-tempe-*.webp` are portraits of David Jones generated/retouched by
 David in Magnific (own likeness, own account), 2026-10-11.
