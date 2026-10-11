@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261011">
+<link rel="stylesheet" href="style.css?v=20261011b">
 <style>
 /* ── Custom Work page ── */
 .cw-hero { padding: 120px 0 70px; text-align: center; position: relative; }
@@ -67,6 +67,19 @@
 .cw-shot:hover { transform: translateY(-3px); border-color: var(--teal-dim); }
 .cw-shot-caption { font-size: 0.82rem; color: var(--text-faint); margin-top: 12px; }
 .cw-shot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 26px; }
+/* BinCall: desktop owner screen beside two phone screens */
+.bc-stage { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: end; }
+.bc-phones { display: flex; gap: 18px; }
+.bc-phone { width: 196px; margin: 0; }
+.bc-phone-frame { background: #0b1020; border-radius: 30px; padding: 9px; box-shadow: var(--shadow-lg); }
+.bc-phone-frame img { display: block; width: 100%; height: auto; aspect-ratio: 9 / 18; object-fit: cover; object-position: top; border-radius: 22px; cursor: zoom-in; }
+.bc-phone figcaption { font-size: 0.78rem; color: var(--text-faint); margin-top: 10px; text-align: center; }
+.bc-link { display: inline-flex; margin-top: 4px; }
+@media (max-width: 1020px) {
+  .bc-stage { grid-template-columns: 1fr; }
+  .bc-phones { justify-content: center; }
+}
+@media (max-width: 480px) { .bc-phone { width: calc(50% - 9px); } .bc-phone-frame { border-radius: 24px; padding: 7px; } .bc-phone-frame img { border-radius: 18px; } }
 @media (max-width: 760px) { .cw-shot-grid { grid-template-columns: 1fr; } }
 
 .cw-stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 34px 0 0; }
@@ -222,6 +235,43 @@
           <div class="render-caption">Counsel first, systems second — most good engagements start as a conversation.</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="cw-case" id="bincall">
+    <div class="container">
+      <div class="cw-case-head">
+        <span class="cw-client">Built and run by Stratum 137 &middot; <a class="text-link" href="https://bincall.com" target="_blank" rel="noopener" data-umami-event="outbound-click" data-umami-event-url="https://bincall.com">bincall.com</a></span>
+        <div class="eyebrow">Our product</div>
+        <h2>BinCall &mdash; scrap-metal bin swaps, requested from a phone and run from one screen.</h2>
+        <p>At most recyclers a swap still starts with a phone call. Someone writes it down, dispatch builds the day by hand, and the driver hears about it by text.</p>
+        <p>BinCall puts the whole job in one app. Customers tap a container to request a swap or pickup, and can attach a load sheet if they weigh their own bins. Dispatch accepts it, plans the run, and sends it to the driver&rsquo;s phone. The driver taps through on the way, arrived, swapped. The owner sees every request, run and report &mdash; and sales reps get a &ldquo;call these today&rdquo; list when a regular account goes quiet.</p>
+      </div>
+
+      <div class="bc-stage">
+        <div>
+          <img src="assets/img/custom/bincall/owner-home.webp" alt="BinCall owner home screen: new requests waiting, tomorrow's plan, today's runs, and at-a-glance counts for a sample recycler" class="cw-shot" loading="lazy" width="1600" height="855">
+          <p class="cw-shot-caption">The owner&rsquo;s home: what&rsquo;s waiting, what&rsquo;s planned, what&rsquo;s running. Shown with demo data &mdash; Saguaro Metals is a sample recycler.</p>
+        </div>
+        <div class="bc-phones">
+          <figure class="bc-phone">
+            <div class="bc-phone-frame"><img src="assets/img/custom/bincall/cust-home.webp" alt="BinCall customer app: a list of the customer's containers on site, each with Swap and Pickup buttons" loading="lazy" width="780" height="1560"></div>
+            <figcaption>Customer: tap a container, send a swap</figcaption>
+          </figure>
+          <figure class="bc-phone">
+            <div class="bc-phone-frame"><img src="assets/img/custom/bincall/drv-stop.webp" alt="BinCall driver app: a stop on today's run with the address, gate notes, contact, and an Arrived button" loading="lazy" width="780" height="1560"></div>
+            <figcaption>Driver: the stop, the gate notes, one tap</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="cw-stats">
+        <span class="cw-stat"><strong>Six roles</strong> &mdash; customer, dispatch, driver, scale house, sales, owner</span>
+        <span class="cw-stat"><strong>English &amp; Espa&ntilde;ol</strong> customer and driver apps</span>
+        <span class="cw-stat"><strong>Load sheets</strong> with a reweigh check</span>
+        <span class="cw-stat"><strong>Reports</strong> with CSV export</span>
+      </div>
+      <a class="text-link bc-link" href="https://bincall.com" target="_blank" rel="noopener" data-umami-event="outbound-click" data-umami-event-url="https://bincall.com">See it at bincall.com &rarr;</a>
     </div>
   </section>
 
@@ -481,7 +531,7 @@
   }
   var box = document.getElementById('lightbox');
   var boxImg = box.querySelector('img');
-  document.querySelectorAll('.cw-shot, .cw-site-shot').forEach(function (img) {
+  document.querySelectorAll('.cw-shot, .cw-site-shot, .bc-phone-frame img').forEach(function (img) {
     img.addEventListener('click', function () {
       boxImg.src = img.src;
       boxImg.alt = img.alt;
