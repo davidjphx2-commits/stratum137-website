@@ -1790,3 +1790,4 @@ main, .announce-bar { position: relative; z-index: 1; }
 .reply-note { margin: 18px auto 0 !important; font-size: 0.86rem !important; color: var(--text-faint) !important; }
 .footer-reply { color: rgba(255, 255, 255, 0.72); white-space: nowrap; }
 .trust-inner .text-link { font-size: 0.9rem; }
+.testimonial-wide { max-width: 860px; margin: 40px auto 0; }
